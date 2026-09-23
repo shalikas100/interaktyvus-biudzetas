@@ -920,21 +920,6 @@
     min-width: 0;
 }
 
-.islaidu_forma,
-.pajamu_forma {
-    display: flex;
-    flex-direction: column;
-}
-
-.pajamu_forma #pajamos-2027_su_pasirinkimais {
-    margin-top: auto;
-}
-
-.islaidu_forma #islaidos-2027_su_pasirinkimais,
-.pajamu_forma #pajamos-2027_su_pasirinkimais {
-    box-sizing: border-box;
-}
-
 
 /* ===== BIUDŽETO BALANSO KORTELĖ ===== */
 
@@ -950,10 +935,13 @@
 /* ===== CHART KONTEINERIS ===== */
 
 .biudzeto-balanso-chart {
- 
-        display: flex;
-    flex-direction: column;
+    position: relative;
 
+    flex: 1 1 auto;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
 }
 
 
