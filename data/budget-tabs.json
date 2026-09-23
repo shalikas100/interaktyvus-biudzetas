@@ -1,0 +1,141 @@
+{
+  "tabs": [
+    {
+      "id": "pajamos",
+      "label": "Pajamos",
+      "description": "Pajamų pagrindą sudaro privalomojo sveikatos draudimo (PSD) įmokos ir valstybės biudžeto lėšos.",
+      "items": [
+        {
+          "id": "gyventoju-psd",
+          "color":"#70AD47",
+          "name": "Gyventojų privalomojo sveikatos draudimo (PSD) įmokos",
+          "plan2026": 2989,
+          "forecast2027": 3160,
+          "explanation": 
+          "Gyventojų PSD įmokos tarifas – 6,98 proc. nuo jiems priskaičiuotų pajamų. <br>Vienas gyventojas vidutiniškai sumoka apie 200 Eur PSD įmokų per mėnesį.",
+          "change": 171,
+          "changePercent": 0.057209769153563066,
+          "share2026": 0.6935034802784222,
+          "share2027": 0.657374661951321
+        },
+        {
+          "id": "valstybes-psd",
+          "color":"#A9D08E",
+          "name": "Valstybės biudžeto PSD įmokos",
+          "plan2026": 1104,
+          "forecast2027": 1407,
+          "explanation": "Valstybė sumoka PSD įmokas už labiausiai socialiai pažeidžiamus asmenis, kurie nedirba ir nevykdo jokios ekonominės <br>veiklos: vaikus, studentus, pensininkus, neįgaliuosius ir pan., t. y. už 1,4 mln. asmenų (pusę Lietuvos apdraustųjų). <br>Valstybė už vieną asmenį sumoka apie: <br>2026 m. 65 Eur per mėnesį arba 780 Eur per metus, <br>2027 m. 84 Eur per mėnesį arba 1 009 Eur per metus.",
+          "change": 303,
+          "changePercent": 0.27445652173913043,
+          "share2026": 0.25614849187935035,
+          "share2027": 0.2926981485333888
+        },
+        {
+          "id": "deleguotos-funkcijos-pajamos",
+          "color":"#C6E0B4",
+          "name": "Valstybės biudžeto asignavimai už deleguotų funkcijų vykdymą",
+          "plan2026": 188,
+          "forecast2027": 208,
+          "explanation": "Valstybė delegavo finansuoti papildomas funkcijas, kurių išlaidos apmokamos PSDF biudžetui skirtomis valstybės biudžeto lėšomis: <br>- greitosios medicinos pagalbos paslaugas, <br>- neatlygintinos kraujo donorystės propagavimą, <br>- nedraustų asmenų būtinąją sveikatos priežiūrą, <br>- priemokų už kompensuojamuosius vaistus bei medicinos pagalbos priemones padengimą (75 m. ir vyresniems gyventojams ar gyventojams, viršijusiems nustatytą priemokų krepšelį).",
+          "change": 20,
+          "changePercent": 0.10638297872340426,
+          "share2026": 0.04361948955916473,
+          "share2027": 0.04327023091325151
+        },
+        {
+          "id": "kitos-pajamos",
+          "color":"#E2EFDA",
+          "name": "Kitos pajamos",
+          "plan2026": 29,
+          "forecast2027": 32,
+          "explanation": "Kitos teisėtai gautos pajamos, pavyzdžiui, palūkanos už investuotas lėšas.",
+          "change": 3,
+          "changePercent": 0.10344827586206896,
+          "share2026": 0.006728538283062645,
+          "share2027": 0.006656958602038693
+        }
+      ],
+      "totals": {
+        "plan2026": 4310,
+        "forecast2027": 4807,
+        "change": 497,
+        "changePercent": 0.11531322505800463,
+        "color": "#C6E0B4"
+      }
+    },
+    {
+      "id": "islaidos",
+      "label": "Išlaidos",
+      "description": "Privalomojo sveikatos draudimo fondo biudžeto lėšomis užtikrinama galimybė gauti reikiamas sveikatos priežiūros paslaugas, vaistus, medicinos pagalbos priemones ir kitą medicinos pagalbą.",
+      "items": [
+        {
+          "id": "asmens-sveikatos-prieziura",
+          "color":"#F09E38",
+          "name": "Asmens sveikatos priežiūros paslaugoms tenka",
+          "plan2026": 3000,
+          "forecast2027": 3509,
+          "explanation": "Apmokama: <br>- šeimos gydytojų ir gydytojų specialistų konsultacijos, <br>- gydymas ligoninėse, <br>- skubioji pagalba gydymo įstaigose, <br>- slaugos paslaugos, <br>- medicininė reabilitacija, <br>- diagnostiniai tyrimai ir kt. <br>Didžiausia biudžeto dalis – visos pagrindinės gydymo paslaugos.",
+          "change": 509,
+          "changePercent": 0.16966666666666666,
+          "share2026": 0.696217219772569,
+          "share2027": 0.6949891067538126
+        },
+        {
+          "id": "vaistai-ir-priemones",
+          "color":"#F4C242",
+          "name": "Vaistams ir medicinos pagalbos priemonėms tenka",
+          "plan2026": 837,
+          "forecast2027": 972,
+          "explanation": "Apmokama: <br>- vaistinėse išduoti kompensuojamieji vaistai, <br>- centralizuotai perkami brangūs vaistai, <br>- medicinos pagalbos priemonės, <br>- ortopedijos techninės priemonės, <br>- medicinos priemonių nuoma. <br>Sumažina gyventojų išlaidas vaistams ir priemonėms.",
+          "change": 135,
+          "changePercent": 0.16129032258064516,
+          "share2026": 0.19424460431654678,
+          "share2027": 0.1925133689839572
+        },
+        {
+          "id": "sveikatos-programos",
+          "color":"#F7DB78",
+          "name": "Sveikatos programoms tenka",
+          "plan2026": 236,
+          "forecast2027": 304,
+          "explanation": "Apmokama: <br>- prevencinių programų paslaugos, <br>- skiepai pagal valstybines programas, <br>- vaistai ir vakcinos užkrečiamųjų ligų kontrolei, <br>- dantų protezavimo, <br>- transplantacijos paslaugos, <br>- gyventojo patirtos gydymo išlaidos užsienyje ir kt. <br>Padeda išvengti ligų ar jas nustatyti anksčiau.",
+          "change": 68,
+          "changePercent": 0.288135593220339,
+          "share2026": 0.054769087955442095,
+          "share2027": 0.06020994256288374
+        },
+        {
+          "id": "deleguotos-funkcijos-islaidos",
+          "color":"#FAE7A3",
+          "name": "Valstybės deleguotoms funkcijoms tenka",
+          "plan2026": 188,
+          "forecast2027": 208,
+          "explanation": "Apmokama: <br>- greitosios medicinos pagalbos paslaugos, <br>- nedraustų asmenų būtinoji sveikatos priežiūra, <br>- kraujo donorystės propagavimas, <br>- priemokos už vaistus bei medicinos pagalbos priemones. <br>Užtikrina būtinąsias išlaidas, kurias valstybė įsipareigoja finansuoti.",
+          "change": 20,
+          "changePercent": 0.10638297872340426,
+          "share2026": 0.04362961243908099,
+          "share2027": 0.04119627649039414
+        },
+        {
+          "id": "kitos-islaidos",
+          "color":"#FCF3D0",
+          "name": "Kitoms išlaidoms tenka",
+          "plan2026": 48,
+          "forecast2027": 56,
+          "explanation": "Apmokama: <br>- sveikatos sistemos administravimo kaštai, <br>- informacinių sistemų kūrimas ir priežiūra, <br>- kitos bendrosios sistemos išlaidos. <br>Be šių išlaidų sveikatos sistema negalėtų veikti sklandžiai.",
+          "change": 8,
+          "changePercent": 0.16666666666666666,
+          "share2026": 0.011139475516361104,
+          "share2027": 0.011091305208952268
+        }
+      ],
+        "totals": {
+        "plan2026": 4309,
+        "forecast2027": 5049,
+        "change": 740,
+        "changePercent": 0.1717335808772337,
+        "color": "#FFE699"
+      }
+    }
+  ]
+}

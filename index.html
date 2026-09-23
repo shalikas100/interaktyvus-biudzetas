@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <section class="psdf-hero">
+        <div class="container-fluid">
+            <div class="psdf-layout">
+
+                <!-- KAIRĖ -->
+                <div class="psdf-main">
+
+                    <h1 class="psdf-title">
+                        Kviečiame priimti iššūkį ir suplanuoti
+                        <span>kitų metų PSDF biudžetą!</span>
+                    </h1>
+
+                    <p class="psdf-description">
+                        PSDF biudžetas – vienas svarbiausių lėšų šaltinių,
+                        iš kurio apmokama gyventojų sveikatos priežiūra Lietuvoje
+                        ir už jos ribų.
+                    </p>
+
+                </div>
+
+
+                <!-- DEŠINĖ -->
+                <div class="psdf-stats">
+
+                    <div class="psdf-stat psdf-stat-main">
+                        <div class="psdf-stat-number">4,3 mlrd. €</div>
+                        <div class="psdf-stat-label">
+                            PSDF biudžetas 2026 m.
+                        </div>
+                    </div>
+
+                    <div class="psdf-stat-small">
+                        <div class="psdf-stat-number">~5 %</div>
+                        <div class="psdf-stat-label">
+                            BVP dalis
+                        </div>
+                    </div>
+
+                    <div class="psdf-stat-small">
+                        <div class="psdf-stat-number">~90 %</div>
+                        <div class="psdf-stat-label">
+                            visuomeninių išlaidų sveikatai
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="psdf-charts mt-5 mb-5">
+        <!-- IŠLAIDOS -->
+        <div class="psdf-chart-card">
+            <div class="psdf-chart-header">
+                <h4>Išlaidų planas 2026 m.</h4>
+                <span class="psdf-chart-subtitle">Pagal išlaidų kategorijas</span>
+            </div>
+
+            <div class="psdf-chart-content">
+
+                <div class="psdf-chart-legend chart-legend" id="legenda_islaidos">
+                    Legenda
+                </div>
+                <div class="psdf-chart-canvas" id="islaidos_diagrama">
+                    <canvas id="islaidos_canva"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- PAJAMOS -->
+        <div class="psdf-chart-card">
+            <div class="psdf-chart-header">
+                <h4>Pajamų planas 2026 m.</h4>
+                <span class="psdf-chart-subtitle">Pagal pajamų šaltinius</span>
+            </div>
+            <div class="psdf-chart-content">
+                <div class="psdf-chart-legend chart-legend" id="legenda_pajamos">
+                    Legenda
+                </div>
+                <div class="psdf-chart-canvas" id="pajamos_diagrama">
+                    <canvas id="pajamos_canva"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="psdf-chart-card psdf-chart-wide">
+            <div class="psdf-chart-header">
+                <h4>2027 m. išlaidos ir pajamos (mln. Eur)</h4>
+                <span class="psdf-chart-subtitle">planas pagal galiojančius teisės aktus</span>
+            </div>
+            <div class="psdf-chart-content psdf-chart-stacked">
+                <div id="islaidos-2027"></div>
+                <div id="pajamos-2027"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12 text-center">
+            <h4>Prie šių bazinių išlaidų arba pajamų gali būti pridėtos papildomos lėšos naujiems poreikiams
+                patenkinti. Kokioms papildomoms išlaidoms ar pajamoms pritartumėte Jūs:</h4>
+        </div>
+    </div>
+
+    <div class="psdf-charts-forms">
+        <div class="psdf-chart-card islaidu_forma">
+            <div class="row pirmas_blokas mb-4">
+                <div class="row  klausimas-1" id="klausimas-1">
+                    <strong>
+                        <p>1. Papildomas lėšų poreikis sveikatos priežiūros įstaigų
+                            darbuotojų vidutiniam darbo užmokesčiui (VDU) didinti.
+                            Kokį didinimą pritariate? (galima pasirinkti tik vieną variantą)
+                            <span class="info-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    <strong>2026 m. I ketv. VDU (bruto tenkantis 1 etatui):</strong><br><br>
+                                    Gydytojai 6 202 Eur <br>
+                                    Slaugytojai 2 770 Eur <br>
+                                    Kitų gydymo įstaigų darbuotojų 2 213 Eur <br>
+                                    <br>
+                                    Pastaba: šalies darbuotojų VDU – 2 543 Eur.
+                                </span>
+                            </span>
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-1-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+6,0 % (pagal Finansų ministerijos šalies VDU augimo
+                        prognozes)</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                <strong>Vidutiniškai per mėnesį didėtų:</strong> <br>
+                                gydytojams 372 Eur; <br>
+                                slaugytojams 166 Eur; <br>
+                                likusiems darbuotojams 133 Eur.
+                            </span>
+                        </span>
+                        172 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vdu" value="a" data-amount="172">
+                    </div>
+                </div>
+                <div class="row klausimas-1-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+8,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                <strong>Vidutiniškai per mėnesį didėtų:</strong><br>
+                                gydytojams 496 Eur; <br>
+                                slaugytojams 222 Eur; <br>
+                                likusiems darbuotojams 177 Eur.
+                            </span>
+                        </span>
+                        229 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vdu" value="b" data-amount="229">
+                    </div>
+                </div>
+                <div class="row klausimas-1-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+10,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                <strong>Vidutiniškai per mėnesį didėtų:</strong> <br>
+                                gydytojams 620 Eur;<br>
+                                slaugytojams 277 Eur;<br>
+                                likusiems darbuotojams 221 Eur.
+                            </span>
+                        </span>
+                        285 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vdu" value="c" data-amount="285">
+                    </div>
+                </div>
+                <div class="row klausimas-1-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardytam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vdu" value="d" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row pirmas_blokas_a mb-4">
+                <div class="row  klausimas-1_a" id="klausimas-1_a">
+                    <strong>
+                        <p>1a. Jūsų manymu, kam turėtų būti teikiamas prioritetas didinant VDU (išdėstykite pagal
+                            svarbumą):
+                        </p>
+                    </strong>
+                </div>
+                <div id="answers_1_a">
+                    <div class="row klausimas-1-atsakymai-a answer_1_a" data-value="visiems darbuotojams">
+                        <div class="col-md-1 atsakymo-raide priority">a)</div>
+                        <span class="col-md-1 handle">☰</span>
+                        <div class="col-md-9 atsakymo-aprasymas">visiems darbuotojams</div>
+                    </div>
+                    <div class="row klausimas-1-atsakymai-b answer_1_a" data-value="gydytojams">
+                        <div class="col-md-1 atsakymo-raide priority">b)</div>
+                        <span class="col-md-1 handle">☰</span>
+                        <div class="col-md-9 atsakymo-aprasymas">gydytojams</div>
+                    </div>
+                    <div class="row klausimas-1-atsakymai-c answer_1_a" data-value="slaugytojams">
+                        <div class="col-md-1 atsakymo-raide priority">c)</div>
+                        <span class="col-md-1 handle">☰</span>
+                        <div class="col-md-9 atsakymo-aprasymas">slaugytojams</div>
+                    </div>
+                    <div class="row klausimas-1-atsakymai-d answer_1_a" data-value="kitam personalui">
+                        <div class="col-md-1 atsakymo-raide priority">d)</div>
+                        <span class="col-md-1 handle">☰</span>
+                        <div class="col-md-9 atsakymo-aprasymas">kitam personalui</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row antras_blokas mb-4">
+                <div class="row klausimas-2" id="klausimas-2">
+                    <strong>
+                        <p>2. Papildomas lėšų poreikis asmens sveikatos priežiūros paslaugoms plėtoti. Kokiai
+                            plėtrai
+                            pritartumėte (galima pasirinkti kelis variantus)?
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-2-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">kompensuoti gyventojams daugiau gydytojų konsultacijų
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">21 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="a" data-amount="21">
+                    </div>
+                </div>
+                <div class="row klausimas-2-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">didinti pagalbinio apvaisinimo paslaugų kompensavimą
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">4 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="b" data-amount="4">
+                    </div>
+                </div>
+                <div class="row klausimas-2-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">gerinti slaugos paslaugų namuose prieinamumą
+                        gyventojams</div>
+                    <div class="col-md-2 atsakymo-pinigai">4 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="c" data-amount="4">
+                    </div>
+                </div>
+                <div class="row klausimas-2-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">vykdyti naujas arba plėtoti jau įgyvendinamas
+                        prevencines programas (pvz., pradėti finansuoti naują brocho ir plaučio vėžio programą)
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">23 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="d" data-amount="23">
+                    </div>
+                </div>
+                <div class="row klausimas-2-atsakymai-e">
+                    <div class="col-md-1 atsakymo-raide">e)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardytam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="e" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row trecias_blokas mb-4">
+                <div class="row klausimas-3" id="klausimas-3">
+                    <strong>
+                        <p>3. Papildomas lėšų poreikis vaistų ir medicinos pagalbos priemonių kompensavimui plėtoti.
+                            Kokiai plėtrai pritartumėte (galima pasirinkti kelis variantus)?
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-3-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">kompensuoti naujus vaistus (pvz., vaistus vėžiui
+                        gydyti)</div>
+                    <div class="col-md-2 atsakymo-pinigai">67 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vaistai" value="a" data-amount="67">
+                    </div>
+                </div>
+                <div class="row klausimas-3-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">kompensuoti naujas medicinos pagalbos priemones (pvz.
+                        ...)</div>
+                    <div class="col-md-2 atsakymo-pinigai">6 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vaistai" value="b" data-amount="6">
+                    </div>
+                </div>
+                <div class="row klausimas-3-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardintam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vaistai" value="c" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div id="islaidos-2027_su_pasirinkimais"></div>
+        </div>
+        <div class="psdf-chart-card pajamu_forma">
+            <div class="row ketvirtas_blokas mb-4">
+                <div class="row  klausimas-4" id="klausimas-4">
+                    <strong>
+                        <p>4. Ar pritartumėte, kad būtų padidinta PSD įmoka už valstybės biudžeto lėšomis
+                            draudžiamus
+                            asmenis (galima pasirinkti vieną variantą)?
+                            <span class="info-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    Valstybė sumoka PSD įmokas už labiausiai socialiai pažeidžiamus asmenis, kurie
+                                    nedirba ir nevykdo jokios ekonominės veiklos: vaikus, studentus, pensininkus,
+                                    neįgaliuosius ir pan., t. y. už 1,4 mln. asmenų (pusę Lietuvos apdraustųjų).
+                                    Mėnesinė PSD įmoka, mokama už valstybės lėšomis draudžiamus asmenis, sudaro 84
+                                    Eur ir yra 2 kartus mažesnė nei dirbančiųjų įmoka (vidutiniškai sumokama apie
+                                    200 Eur per mėnesį).
+                                </span>
+                            </span>
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-4-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+6,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Mėnesio įmoka padidėtų nuo 84 Eur iki 89 Eur
+                            </span>
+                        </span>
+
+
+                        84 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_imokos_padidinimas" value="a" data-amount="84">
+                    </div>
+                </div>
+                <div class="row klausimas-4-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+8,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Mėnesio įmoka padidėtų nuo 84 Eur iki 91 Eur
+                            </span>
+                        </span>
+
+
+                        113 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_imokos_padidinimas" value="b" data-amount="113">
+                    </div>
+                </div>
+                <div class="row klausimas-4-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+10,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Mėnesio įmoka padidėtų nuo 84 Eur iki 92 Eur
+                            </span>
+                        </span>
+
+
+                        141 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_imokos_padidinimas" value="c" data-amount="141">
+                    </div>
+                </div>
+                <div class="row klausimas-4-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardintam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_imokos_padidinimas" value="d" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row penktas_blokas mb-4">
+                <div class="row klausimas-5" id="klausimas-5">
+                    <strong>
+                        <p>5. Ar pritartumėte, kad būtų padidintas PSD įmokos tarifas, taikomas visiems
+                            mokantiesiems
+                            šias įmokas (galima pasirinkti vieną variantą)?
+                            <span class="info-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    Šiuo metu tarifas 6,98 % nuo apmokestinamųjų pajamų. Vidutiniškai dirbantis
+                                    asmuo sumoka per mėnesį iki 200 Eur.
+                                </span>
+                            </span>
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-5-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nuo 6,98 % iki 7,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Vidutinį darbo užmokestį gaunantis darbuotojas per metus papildomai sumokėtų apie 6
+                                Eur.
+                            </span>
+                        </span>
+
+                        9 mln
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_padidinimas_tarifas" value="a" data-amount="9">
+                    </div>
+                </div>
+                <div class="row klausimas-5-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nuo 6,98 % iki 7,1 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Vidutinį darbo užmokestį gaunantis darbuotojas per metus papildomai sumokėtų apie 40
+                                Eur.
+                            </span>
+                        </span>
+
+                        54 mln
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_padidinimas_tarifas" value="b" data-amount="54">
+                    </div>
+                </div>
+                <div class="row klausimas-5-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nuo 6,98 % iki 7,2 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Vidutinį darbo užmokestį gaunantis darbuotojas per metus papildomai sumokėtų apie 70
+                                Eur.
+                            </span>
+                        </span>
+
+                        100 mln
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_padidinimas_tarifas" value="c" data-amount="100">
+                    </div>
+                </div>
+                <div class="row klausimas-5-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardintam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_padidinimas_tarifas" value="d" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row sestas_blokas mb-4">
+                <div class="row  klausimas-6" id="klausimas-6">
+                    <strong>
+                        <p>6. Ar pritartumėte kurios nors šiuo metu taikomos PSD įmokų lengvatos naikinimui (galima
+                            pasirinkti kelis variantus)?
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-6-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">apmokestinti ligos išmokas, mokamas darbdavio lėšomis
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Už pirmas dvi ligos dienas:
+                                taikomas tarifas 0 %;<br>
+                                siūlomas – 6,98 %.
+                            </span>
+                        </span>
+
+                        4 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_lengvatos_naikinimas" value="a" data-amount="4">
+                    </div>
+                </div>
+                <div class="row klausimas-6-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">naikinti ūkininkams nustatytą PSD įmokų lengvatą</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Taikomas tarifas 2,33 %;<br>
+                                siūlomas – 6,98%.
+                            </span>
+                        </span>
+
+                        7 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_lengvatos_naikinimas" value="b" data-amount="7">
+                    </div>
+                </div>
+                <div class="row klausimas-6-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">
+                        didinti PSD tarifą pagal Ligos ir motinystės socialinio
+                        draudimo įstatymą mokamoms išmokoms (būtų taikoma tik naujas išmokas gausiantiems asmenims)
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Taikomas tarifas 6,0%;<br>
+                                siūlomas – 6,98%.
+                            </span>
+                        </span> 9 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_lengvatos_naikinimas" value="c" data-amount="9">
+                    </div>
+                </div>
+                <div class="row klausimas-6-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardintam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_lengvatos_naikinimas" value="d" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div id="pajamos-2027_su_pasirinkimais"></div>
+        </div>
+        <div class="psdf-chart-card biudzeto-balanso-card">
+            <div id="note"></div>
+            <div class="biudzeto-balanso-chart">
+                <canvas id="biudzeto_balansas_canva"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <section class="psdf-survey mt-5">
+        <div class="container-fluid">
+
+            <div class="psdf-survey-layout">
+
+                <!-- KAIRĖ -->
+                <div class="psdf-survey-intro">
+
+                    <div class="psdf-survey-eyebrow">
+                        Jūsų nuomonė svarbi
+                    </div>
+
+                    <h2 class="psdf-survey-title">
+                        Mums svarbu žinoti, ką sudomino šis
+                        <span>interaktyvus biudžeto planavimo įrankis</span>
+                    </h2>
+
+                    <p class="psdf-survey-description">
+                        Prašome atsakyti į kelis klausimus apie save.
+                    </p>
+
+                </div>
+
+                <!-- DEŠINĖ – APKLAUSA -->
+                <div class="psdf-survey-form">
+
+                    <form id="surveyForm">
+
+                        <!-- 1 klausimas -->
+                        <div class="question">
+                            <div class="question-title">
+                                Amžiaus grupė
+                                <span class="required">*</span>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="amzius" id="amzius1"
+                                        value="iki_18">
+                                    <label class="form-check-label" for="amzius1">
+                                        iki 18 metų
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="amzius" id="amzius2"
+                                        value="18_29">
+                                    <label class="form-check-label" for="amzius2">
+                                        18–29 metų
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="amzius" id="amzius3"
+                                        value="30_65">
+                                    <label class="form-check-label" for="amzius3">
+                                        30–65 metų
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="amzius" id="amzius4"
+                                        value="daugiau_66">
+                                    <label class="form-check-label" for="amzius4">
+                                        daugiau kaip 66 metai
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="amzius" id="amzius5"
+                                        value="nenoriu_nurodyti">
+                                    <label class="form-check-label" for="amzius5">
+                                        nenoriu nurodyti
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- 2 klausimas -->
+                        <div class="question">
+                            <div class="question-title">
+                                Išsilavinimas
+                                <span class="required">*</span>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="issilavinimas"
+                                        id="issilavinimas1" value="pagrindinis_vidurinis_profesinis">
+                                    <label class="form-check-label" for="issilavinimas1">
+                                        pagrindinis / vidurinis / profesinis
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="issilavinimas"
+                                        id="issilavinimas2" value="aukstasis">
+                                    <label class="form-check-label" for="issilavinimas2">
+                                        aukštesnysis / aukštasis
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="issilavinimas"
+                                        id="issilavinimas3" value="nenoriu_nurodyti">
+                                    <label class="form-check-label" for="issilavinimas3">
+                                        nenoriu nurodyti
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- 3 klausimas -->
+                        <div class="question">
+                            <div class="question-title">
+                                Ar esate susijęs su sveikatos priežiūros sistema?
+                                <span class="required">*</span>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="susijes_sveikata"
+                                        id="sveikataTaip" value="taip">
+
+                                    <label class="form-check-label" for="sveikataTaip">
+                                        taip
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="susijes_sveikata" id="sveikataNe"
+                                        value="ne">
+
+                                    <label class="form-check-label" for="sveikataNe">
+                                        ne
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- 4 klausimas -->
+                        <div class="question" id="question4">
+
+                            <div class="question-title">
+                                Jei į 3 klausimą atsakėte „taip“,
+                                kaip esate susijęs su sveikatos priežiūros sistema?
+                                <span class="required">*</span>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sveikatos_sistema" id="sistema1"
+                                        value="studiuoju">
+
+                                    <label class="form-check-label" for="sistema1">
+                                        studijuoju (pvz., visuomenės sveikatos priežiūrą)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sveikatos_sistema" id="sistema2"
+                                        value="destau">
+
+                                    <label class="form-check-label" for="sistema2">
+                                        dėstau (pvz., medicinos fakultete)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sveikatos_sistema" id="sistema3"
+                                        value="dirbu">
+
+                                    <label class="form-check-label" for="sistema3">
+                                        dirbu (pvz., asmens sveikatos priežiūros įstaigoje,
+                                        valstybinėje)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sveikatos_sistema" id="sistema4"
+                                        value="nenoriu_nurodyti">
+
+                                    <label class="form-check-label" for="sistema4">
+                                        nenoriu nurodyti
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- MYGTUKAS -->
+                        <div class="form-actions">
+                            <button type="button" class="psdf-survey-button" id="saveButton">
+                                Išsaugoti atsakymus
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col-md-12 text-center mb-5">
+                <h2>Kviečiame priimti iššūkį ir suplanuoti kitų metų Privalomojo sveikatos draudimo fondo (PSDF)
+                    biudžetą!</h2>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <p style="font-size: 14px;">PSDF biudžetas – tai vienas svarbiausių lėšų šaltinių, iš kurio apmokama
+                    gyventojų sveikatos
+                    priežiūra Lietuvoje ir net už jos ribų. Tai yra trečias pagal dydį šalies biudžetas (po valstybės ir
+                    „Sodros“ biudžetų).
+                    Pirmą kartą jis buvo patvirtintas 1997 m. Nuo tada padidėjo 11 kartų – nuo 379 mln. Eur 1997 m. iki
+                    4,3 mlrd. Eur 2026 metais. Fondo lėšos sudaro apie 5 proc. bendrojo vidaus produkto (BVP) ir apie 90
+                    proc. visų visuomeninių išlaidų sveikatai.
+                    PSDF biudžetas – tai pajamų ir išlaidų planas:
+                </p>
+            </div>
+        </div> -->
+
+        <!-- <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <h4>Išlaidų planas 2026 m.</h4>
+                        </div>
+                        <div class="row chart-legend" id="legenda_islaidos">Legenda</div>
+                    </div>
+                    <div class="col-md-6 table-container-islaidos" id="islaidos_diagrama">
+                        <canvas id="islaidos_canva"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <h4>Pajamų planas 2026 m.</h4>
+                        </div>
+                        <div class="row chart-legend" id="legenda_pajamos">Legenda</div>
+                    </div>
+                    <div class="col-md-6 table-container-pajamos" id="pajamos_diagrama">
+                        <canvas id="pajamos_canva"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+
+
+
+
+
+        <!-- <div class="row text-center ">
+            <h4>2027 m. išlaidos ir pajamos (mln. Eur)</h4>
+            <p>planas pagal galiojančius teisės aktus</p>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6" id="islaidos-2027"></div>
+            <div class="col-md-6" id="pajamos-2027"></div>
+        </div> -->
+        <!-- <div class="row mb-3">
+        <div class="col-md-12 text-center">
+            <h4>Prie šių bazinių išlaidų arba pajamų gali būti pridėtos papildomos lėšos naujiems poreikiams
+                patenkinti. Kokioms papildomoms išlaidoms ar pajamoms pritartumėte Jūs:</h4>
+        </div>
+    </div> -->
+
+
+        <!-- <div class="row mb-2">
+        <div class="col-md-6 islaidu_forma" style="background-color:#FFF2CC; font-size: 10px;">
+            <div class="row pirmas_blokas mb-4">
+                <div class="row  klausimas-1" id="klausimas-1">
+                    <strong>
+                        <p>1. Papildomas lėšų poreikis sveikatos priežiūros įstaigų
+                            darbuotojų vidutiniam darbo užmokesčiui (VDU) didinti.
+                            Kokį didinimą pritariate? (galima pasirinkti tik vieną variantą)
+                            <span class="info-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    <strong>2026 m. I ketv. VDU (bruto tenkantis 1 etatui):</strong><br><br>
+                                    Gydytojai 6 202 Eur <br>
+                                    Slaugytojai 2 770 Eur <br>
+                                    Kitų gydymo įstaigų darbuotojų 2 213 Eur <br>
+                                    <br>
+                                    Pastaba: šalies darbuotojų VDU – 2 543 Eur.
+                                </span>
+                            </span>
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-1-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+6,0 % (pagal Finansų ministerijos šalies VDU augimo
+                        prognozes)</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                <strong>Vidutiniškai per mėnesį didėtų:</strong> <br>
+                                gydytojams 372 Eur; <br>
+                                slaugytojams 166 Eur; <br>
+                                likusiems darbuotojams 133 Eur.
+                            </span>
+                        </span>
+                        172 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vdu" value="a" data-amount="172">
+                    </div>
+                </div>
+                <div class="row klausimas-1-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+8,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                <strong>Vidutiniškai per mėnesį didėtų:</strong><br>
+                                gydytojams 496 Eur; <br>
+                                slaugytojams 222 Eur; <br>
+                                likusiems darbuotojams 177 Eur.
+                            </span>
+                        </span>
+                        229 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vdu" value="b" data-amount="229">
+                    </div>
+                </div>
+                <div class="row klausimas-1-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+10,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                <strong>Vidutiniškai per mėnesį didėtų:</strong> <br>
+                                gydytojams 620 Eur;<br>
+                                slaugytojams 277 Eur;<br>
+                                likusiems darbuotojams 221 Eur.
+                            </span>
+                        </span>
+                        285 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vdu" value="c" data-amount="285">
+                    </div>
+                </div>
+                <div class="row klausimas-1-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardytam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vdu" value="d" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row pirmas_blokas_a mb-4">
+                <div class="row  klausimas-1_a" id="klausimas-1_a">
+                    <strong>
+                        <p>1a. Jūsų manymu, kam turėtų būti teikiamas prioritetas didinant VDU (išdėstykite pagal
+                            svarbumą):
+                        </p>
+                    </strong>
+                </div>
+                <div id="answers_1_a">
+                    <div class="row klausimas-1-atsakymai-a answer_1_a" data-value="visiems darbuotojams">
+                        <div class="col-md-1 atsakymo-raide priority">a)</div>
+                        <span class="col-md-1 handle">☰</span>
+                        <div class="col-md-9 atsakymo-aprasymas">visiems darbuotojams</div>
+                    </div>
+                    <div class="row klausimas-1-atsakymai-b answer_1_a" data-value="gydytojams">
+                        <div class="col-md-1 atsakymo-raide priority">b)</div>
+                        <span class="col-md-1 handle">☰</span>
+                        <div class="col-md-9 atsakymo-aprasymas">gydytojams</div>
+                    </div>
+                    <div class="row klausimas-1-atsakymai-c answer_1_a" data-value="slaugytojams">
+                        <div class="col-md-1 atsakymo-raide priority">c)</div>
+                        <span class="col-md-1 handle">☰</span>
+                        <div class="col-md-9 atsakymo-aprasymas">slaugytojams</div>
+                    </div>
+                    <div class="row klausimas-1-atsakymai-d answer_1_a" data-value="kitam personalui">
+                        <div class="col-md-1 atsakymo-raide priority">d)</div>
+                        <span class="col-md-1 handle">☰</span>
+                        <div class="col-md-9 atsakymo-aprasymas">kitam personalui</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row antras_blokas mb-4">
+                <div class="row klausimas-2" id="klausimas-2">
+                    <strong>
+                        <p>2. Papildomas lėšų poreikis asmens sveikatos priežiūros paslaugoms plėtoti. Kokiai
+                            plėtrai
+                            pritartumėte (galima pasirinkti kelis variantus)?
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-2-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">kompensuoti gyventojams daugiau gydytojų konsultacijų
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">21 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="a" data-amount="21">
+                    </div>
+                </div>
+                <div class="row klausimas-2-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">didinti pagalbinio apvaisinimo paslaugų kompensavimą
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">4 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="b" data-amount="4">
+                    </div>
+                </div>
+                <div class="row klausimas-2-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">gerinti slaugos paslaugų namuose prieinamumą
+                        gyventojams</div>
+                    <div class="col-md-2 atsakymo-pinigai">4 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="c" data-amount="4">
+                    </div>
+                </div>
+                <div class="row klausimas-2-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">vykdyti naujas arba plėtoti jau įgyvendinamas
+                        prevencines programas (pvz., pradėti finansuoti naują brocho ir plaučio vėžio programą)
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">23 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="d" data-amount="23">
+                    </div>
+                </div>
+                <div class="row klausimas-2-atsakymai-e">
+                    <div class="col-md-1 atsakymo-raide">e)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardytam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="asp-paslaugos" value="e" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row trecias_blokas mb-4">
+                <div class="row klausimas-3" id="klausimas-3">
+                    <strong>
+                        <p>3. Papildomas lėšų poreikis vaistų ir medicinos pagalbos priemonių kompensavimui plėtoti.
+                            Kokiai plėtrai pritartumėte (galima pasirinkti kelis variantus)?
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-3-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">kompensuoti naujus vaistus (pvz., vaistus vėžiui
+                        gydyti)</div>
+                    <div class="col-md-2 atsakymo-pinigai">67 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vaistai" value="a" data-amount="67">
+                    </div>
+                </div>
+                <div class="row klausimas-3-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">kompensuoti naujas medicinos pagalbos priemones (pvz.
+                        ...)</div>
+                    <div class="col-md-2 atsakymo-pinigai">6 mln.</div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vaistai" value="b" data-amount="6">
+                    </div>
+                </div>
+                <div class="row klausimas-3-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardintam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="vaistai" value="c" data-amount="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 pajamu_forma" style="background-color: #E2EFDA; font-size: 10px;">
+            <div class="row ketvirtas_blokas mb-4">
+                <div class="row  klausimas-4" id="klausimas-4">
+                    <strong>
+                        <p>4. Ar pritartumėte, kad būtų padidinta PSD įmoka už valstybės biudžeto lėšomis
+                            draudžiamus
+                            asmenis (galima pasirinkti vieną variantą)?
+                            <span class="info-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    Valstybė sumoka PSD įmokas už labiausiai socialiai pažeidžiamus asmenis, kurie
+                                    nedirba ir nevykdo jokios ekonominės veiklos: vaikus, studentus, pensininkus,
+                                    neįgaliuosius ir pan., t. y. už 1,4 mln. asmenų (pusę Lietuvos apdraustųjų).
+                                    Mėnesinė PSD įmoka, mokama už valstybės lėšomis draudžiamus asmenis, sudaro 84
+                                    Eur ir yra 2 kartus mažesnė nei dirbančiųjų įmoka (vidutiniškai sumokama apie
+                                    200 Eur per mėnesį).
+                                </span>
+                            </span>
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-4-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+6,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Mėnesio įmoka padidėtų nuo 84 Eur iki 89 Eur
+                            </span>
+                        </span>
+
+
+                        84 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_imokos_padidinimas" value="a" data-amount="84">
+                    </div>
+                </div>
+                <div class="row klausimas-4-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+8,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Mėnesio įmoka padidėtų nuo 84 Eur iki 91 Eur
+                            </span>
+                        </span>
+
+
+                        113 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_imokos_padidinimas" value="b" data-amount="113">
+                    </div>
+                </div>
+                <div class="row klausimas-4-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">+10,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Mėnesio įmoka padidėtų nuo 84 Eur iki 92 Eur
+                            </span>
+                        </span>
+
+
+                        141 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_imokos_padidinimas" value="c" data-amount="141">
+                    </div>
+                </div>
+                <div class="row klausimas-4-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardintam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_imokos_padidinimas" value="d" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row penktas_blokas mb-4">
+                <div class="row klausimas-5" id="klausimas-5">
+                    <strong>
+                        <p>5. Ar pritartumėte, kad būtų padidintas PSD įmokos tarifas, taikomas visiems
+                            mokantiesiems
+                            šias įmokas (galima pasirinkti vieną variantą)?
+                            <span class="info-icon">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    Šiuo metu tarifas 6,98 % nuo apmokestinamųjų pajamų. Vidutiniškai dirbantis
+                                    asmuo sumoka per mėnesį iki 200 Eur.
+                                </span>
+                            </span>
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-5-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nuo 6,98 % iki 7,0 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Vidutinį darbo užmokestį gaunantis darbuotojas per metus papildomai sumokėtų apie 6
+                                Eur.
+                            </span>
+                        </span>
+
+                        9 mln
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_padidinimas_tarifas" value="a" data-amount="9">
+                    </div>
+                </div>
+                <div class="row klausimas-5-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nuo 6,98 % iki 7,1 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Vidutinį darbo užmokestį gaunantis darbuotojas per metus papildomai sumokėtų apie 40
+                                Eur.
+                            </span>
+                        </span>
+
+                        54 mln
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_padidinimas_tarifas" value="b" data-amount="54">
+                    </div>
+                </div>
+                <div class="row klausimas-5-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nuo 6,98 % iki 7,2 %</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Vidutinį darbo užmokestį gaunantis darbuotojas per metus papildomai sumokėtų apie 70
+                                Eur.
+                            </span>
+                        </span>
+
+                        100 mln
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_padidinimas_tarifas" value="c" data-amount="100">
+                    </div>
+                </div>
+                <div class="row klausimas-5-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardintam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_padidinimas_tarifas" value="d" data-amount="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row sestas_blokas mb-4">
+                <div class="row  klausimas-6" id="klausimas-6">
+                    <strong>
+                        <p>6. Ar pritartumėte kurios nors šiuo metu taikomos PSD įmokų lengvatos naikinimui (galima
+                            pasirinkti kelis variantus)?
+                        </p>
+                    </strong>
+                </div>
+                <div class="row klausimas-6-atsakymai-a">
+                    <div class="col-md-1 atsakymo-raide">a)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">apmokestinti ligos išmokas, mokamas darbdavio lėšomis
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Už pirmas dvi ligos dienas:
+                                taikomas tarifas 0 %;<br>
+                                siūlomas – 6,98 %.
+                            </span>
+                        </span>
+
+                        4 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_lengvatos_naikinimas" value="a" data-amount="4">
+                    </div>
+                </div>
+                <div class="row klausimas-6-atsakymai-b">
+                    <div class="col-md-1 atsakymo-raide">b)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">naikinti ūkininkams nustatytą PSD įmokų lengvatą</div>
+                    <div class="col-md-2 atsakymo-pinigai">
+
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Taikomas tarifas 2,33 %;<br>
+                                siūlomas – 6,98%.
+                            </span>
+                        </span>
+
+                        7 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_lengvatos_naikinimas" value="b" data-amount="7">
+                    </div>
+                </div>
+                <div class="row klausimas-6-atsakymai-c">
+                    <div class="col-md-1 atsakymo-raide">c)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">
+                        didinti PSD tarifą pagal Ligos ir motinystės socialinio
+                        draudimo įstatymą mokamoms išmokoms (būtų taikoma tik naujas išmokas gausiantiems asmenims)
+                    </div>
+                    <div class="col-md-2 atsakymo-pinigai">
+                        <span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="info-tooltip">
+                                Taikomas tarifas 6,0%;<br>
+                                siūlomas – 6,98%.
+                            </span>
+                        </span> 9 mln.
+                    </div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_lengvatos_naikinimas" value="c" data-amount="9">
+                    </div>
+                </div>
+                <div class="row klausimas-6-atsakymai-d">
+                    <div class="col-md-1 atsakymo-raide">d)</div>
+                    <div class="col-md-8 atsakymo-aprasymas">nepritariu nei vienam išvardintam siūlymui</div>
+                    <div class="col-md-2 atsakymo-pinigai"></div>
+                    <div class="col-md-1 atsakymo-pasirinkimas">
+                        <input type="checkbox" name="psd_lengvatos_naikinimas" value="d" data-amount="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+        <!-- <div class="row mb-2">
+        <div class="col-md-6" id="islaidos-2027_su_pasirinkimais"></div>
+        <div class="col-md-6" id="pajamos-2027_su_pasirinkimais"></div>
+    </div> -->
+        <!-- <div class="row">
+        <div class="col-md-12" id="note"></div>
+    </div> -->
+        <!-- <div class="row">
+        <div class="col-md-12">
+            <canvas id="biudzeto_balansas_canva"></canvas>
+        </div>
+    </div> -->
+
+    </div>
+
+
+
+    <!-- modalas -->
+    <div class="modal fade" id="biudzetasModal" tabindex="-1" aria-labelledby="biudzetasModal" aria-hidden="true">
+        <div class="modal-dialog modal-xxl">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="biudzetasModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Uždaryti"></button>
+                </div>
+                <div class="modal-body" id="biudzetasModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Ačiū modalas -->
+    <div class="modal fade" id="aciuModal" tabindex="-1" aria-labelledby="aciuModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content aciu-modal">
+
+                <!-- Uždarymo kryžiukas -->
+                <button type="button" class="btn-close aciu-close" data-bs-dismiss="modal"
+                    aria-label="Uždaryti"></button>
+
+                <div class="modal-body text-center">
+
+                    <div class="aciu-icon">
+                        ✓
+                    </div>
+
+                    <h2 id="aciuModalLabel">
+                        Ačiū už Jūsų atsakymus!
+                    </h2>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Klaidos modalas -->
+    <div class="modal fade" id="klaidosModal" tabindex="-1" aria-labelledby="klaidosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content klaidos-modal">
+
+                <!-- Uždarymo kryžiukas -->
+                <button type="button" class="btn-close klaidos-close" data-bs-dismiss="modal"
+                    aria-label="Uždaryti"></button>
+
+                <div class="modal-body text-center">
+
+                    <div class="klaidos-icon">
+                        !
+                    </div>
+
+                    <h2 id="klaidosModalLabel">
+                        Nepasirinkti atsakymai
+                    </h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Deficitinis modalas -->
+    <div class="modal fade" id="deficitinis" tabindex="-1" aria-labelledby="deficitinisLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content klaidos-modal">
+
+                <!-- Uždarymo kryžiukas -->
+                <button type="button" class="btn-close klaidos-close" data-bs-dismiss="modal"
+                    aria-label="Uždaryti"></button>
+
+                <div class="modal-body text-center">
+
+                    <div class="klaidos-icon">
+                        !
+                    </div>
+
+                    <h2 id="deficitinisLabel">
+                        Biudžetas negali būti deficitinis
+                    </h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Neatsakyti biudzeto klausimai modalas -->
+    <div class="modal fade" id="biudzetoKlausimai" tabindex="-1" aria-labelledby="biudzetoKlausimaiLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content klaidos-modal">
+
+                <!-- Uždarymo kryžiukas -->
+                <button type="button" class="btn-close klaidos-close" data-bs-dismiss="modal"
+                    aria-label="Uždaryti"></button>
+
+                <div class="modal-body text-center">
+
+                    <div class="klaidos-icon">
+                        !
+                    </div>
+
+                    <h2 id="biudzetoKlausimaiLabel">
+                        Biudžeto klausimų skiltyje kiekvienas klausimas turi turėti bent vieną pasirinktą atsakymą.
+                    </h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="atsakymu_pasirinkimas.js"></script>
+    <script src="tables.js"></script>
+    <script src="chart.js"></script>
+    <script src="forma.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
