@@ -672,44 +672,24 @@
 
 
 
-
-/* =========================================
-   APKLAUSA / FOOTER
-   ========================================= */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .psdf-survey {
     width: 100%;
     overflow: hidden;
-
     background: #4b2871;
-
     color: #fff;
 }
 
-
-/* =========================================
-   LAYOUT
-   ========================================= */
-
 .psdf-survey-layout {
     width: 90%;
-    /* max-width: 1600px; */
-
     margin: 0 auto;
     padding: 55px 0 60px;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     align-items: start;
-
     column-gap: 60px;
 }
-
-
-/* =========================================
-   KAIRĖ PUSĖ
-   ========================================= */
 
 .psdf-survey-intro {
     padding-top: 8px;
@@ -717,48 +697,33 @@
 
 .psdf-survey-eyebrow {
     margin-bottom: 12px;
-
     color: #d5b9e8;
-
     font-size: 13px;
     font-weight: 700;
-
     text-transform: uppercase;
     letter-spacing: 1.2px;
 }
 
 .psdf-survey-title {
     margin: 0 0 20px;
-
     font-size: clamp(32px, 3vw, 48px);
     line-height: 1.08;
-
     font-weight: 700;
     letter-spacing: -1px;
 }
 
 .psdf-survey-title span {
     display: block;
-
     color: #d5b9e8;
 }
 
 .psdf-survey-description {
     max-width: 520px;
-
     margin: 0;
-
     font-size: 16px;
     line-height: 1.55;
-
     color: rgba(255, 255, 255, 0.72);
 }
-
-
-
-/* =========================================
-   FORMA
-   ========================================= */
 
 .psdf-survey-form {
     min-width: 0;
@@ -767,23 +732,15 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
     backdrop-filter: blur(8px);
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 45px;
-
-    /* Neleidžiame grid'ui automatiškai permėtyti elementų */
     align-items: start;
 }
 
 #surveyForm {
     display: contents;
 }
-
-
-/* =========================================
-   KLAUSIMAI
-   ========================================= */
 
 .psdf-survey-form .question {
     padding: 0 0 22px;
@@ -815,7 +772,6 @@
     grid-row: 2;
 }
 
-
 /* =========================================
    MYGTUKAS
    ========================================= */
@@ -823,7 +779,6 @@
 .form-actions {
     grid-column: 1;
     grid-row: 3;
-
     padding-top: 24px;
 }
 
@@ -851,30 +806,18 @@
     transform: translateY(-1px);
 }
 
-
 /* =========================================
    ANKETOS INFORMACIJA
    ========================================= */
-
 .anketos_anonmiskumas {
     grid-column: 1 / -1;
     grid-row: 4;
-
-    margin-top: 0;
+    margin-top: 25px;       
+    font-size: 0.8rem;      
+    color: rgba(255, 255, 255, 0.72);      
+    font-style: italic;  
+    line-height: 1;       
 }
-
-.anketos_anonmiskumas p {
-    margin-bottom: 0;
-}
-
-.anketos_anonmiskumas {
-    margin-top: 25px;       /* Atskiria pastabą nuo išsaugojimo mygtuko */
-    font-size: 0.8rem;      /* Padaro raides pastebimai mažesnes */
-    color: rgba(255, 255, 255, 0.72);       /* Paverčia tekstą švelnesne pilka spalva */
-    font-style: italic;     /* Paverčia tekstą pasvirusiu (kursyvu) */
-    line-height: 2;       /* Sutvarko eilučių tarpus */
-}
-
 
 /* =========================================
    MOBILE
@@ -898,9 +841,6 @@
     }
 }
 
-
-/* ===== MOBILE ===== */
-
 @media (max-width: 768px) {
 
     .psdf-survey-form {
@@ -908,16 +848,13 @@
     }
 }
 
-
-/* ===== SMALL MOBILE ===== */
-
 @media (max-width: 480px) {
 
     .psdf-survey-form {
         height: 380px;
     }
 }
-
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 /* =========================================================
