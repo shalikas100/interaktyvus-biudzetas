@@ -533,11 +533,35 @@
    TABLET
    ========================================= */
 
+@media (max-width: 1500px) and (min-width: 1201px) {
+
+    .psdf-chart-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        width: 100%;
+        align-items: center;
+    }
+
+}
+
+
 @media (max-width: 1200px) {
+
+    .psdf-chart-stacked, .psdf-chart-wide{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #islaidos-2027, #pajamos-2027{
+        width: 100%;
+    }
+
 
     .psdf-charts {
         width: 88%;
-
+        grid-template-columns:  1fr;;
         gap: 20px;
     }
 
