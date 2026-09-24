@@ -73,7 +73,7 @@
 .info-icon:hover > .info-tooltip {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
+    /* pointer-events: auto; */
 }
 
 /* Lentelė yra tooltip viduje */
