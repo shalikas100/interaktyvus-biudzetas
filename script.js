@@ -40,37 +40,3 @@ function sulygintiPaskutiniusBlokus() {
     islaidos.style.height = aukstis + 'px';
     pajamos.style.height = aukstis + 'px';
 }
-
-
-function paleistiPaskutiniuBlokuLygiavima() {
-    const islaidos = document.getElementById('islaidos-2027_su_pasirinkimais');
-    const pajamos = document.getElementById('pajamos-2027_su_pasirinkimais');
-
-    if (!islaidos || !pajamos) return;
-
-    const observer = new ResizeObserver(() => {
-        sulygintiPaskutiniusBlokus();
-    });
-
-    observer.observe(islaidos);
-    observer.observe(pajamos);
-
-    // Pirmas bandymas
-    sulygintiPaskutiniusBlokus();
-
-    // Dar vienas po DOM atvaizdavimo
-    requestAnimationFrame(() => {
-        sulygintiPaskutiniusBlokus();
-    });
-
-    // Ir dar vienas po visų kitų JS veiksmų
-    setTimeout(() => {
-        sulygintiPaskutiniusBlokus();
-    }, 100);
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', paleistiPaskutiniuBlokuLygiavima);
-} else {
-    paleistiPaskutiniuBlokuLygiavima();
-}

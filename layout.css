@@ -755,26 +755,25 @@
 }
 
 
+
 /* =========================================
    FORMA
    ========================================= */
 
 .psdf-survey-form {
     min-width: 0;
-
     padding: 28px 32px;
-
     background: rgba(255, 255, 255, 0.07);
-
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
-
     backdrop-filter: blur(8px);
-
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 45px;
+
+    /* Neleidžiame grid'ui automatiškai permėtyti elementų */
+    align-items: start;
 }
 
 #surveyForm {
@@ -789,66 +788,31 @@
 .psdf-survey-form .question {
     padding: 0 0 22px;
     margin: 0 0 22px;
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.psdf-survey-form .question:last-of-type {
-    margin-bottom: 0;
+/* 1 klausimas – kairė, viršus */
+.psdf-survey-form .question:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
 }
 
-.psdf-survey-form .question-title {
-    margin-bottom: 13px;
-
-    color: #fff;
-
-    font-size: 15px;
-    line-height: 1.4;
-
-    font-weight: 700;
+/* 2 klausimas – dešinė, viršus */
+.psdf-survey-form .question:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
 }
 
-.psdf-survey-form .required {
-    color: #d5b9e8;
+/* 3 klausimas – kairė, antra eilė */
+.psdf-survey-form .question:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
 }
 
-
-/* =========================================
-   PASIRINKIMAI
-   ========================================= */
-
-.psdf-survey-form .option {
-    margin-bottom: 7px;
-}
-
-.psdf-survey-form .option:last-child {
-    margin-bottom: 0;
-}
-
-.psdf-survey-form .form-check {
-    min-height: 0;
-}
-
-.psdf-survey-form .form-check-input {
-    margin-top: 0.25em;
-
-    background-color: transparent;
-
-    border-color: rgba(255, 255, 255, 0.5);
-}
-
-.psdf-survey-form .form-check-input:checked {
-    background-color: #d5b9e8;
-    border-color: #d5b9e8;
-}
-
-.psdf-survey-form .form-check-label {
-    color: rgba(255, 255, 255, 0.78);
-
-    font-size: 14px;
-    line-height: 1.45;
-
-    cursor: pointer;
+/* 4 klausimas – dešinė, antra eilė */
+.psdf-survey-form .question:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
 }
 
 
@@ -857,6 +821,9 @@
    ========================================= */
 
 .form-actions {
+    grid-column: 1;
+    grid-row: 3;
+
     padding-top: 24px;
 }
 
@@ -864,19 +831,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 44px;
     padding: 10px 22px;
-
     border: 0;
     border-radius: 8px;
-
     background: #d5b9e8;
     color: #32174d;
-
     font-size: 14px;
     font-weight: 700;
-
     cursor: pointer;
 
     transition:
@@ -886,8 +848,74 @@
 
 .psdf-survey-button:hover {
     background: #e1cdf0;
-
     transform: translateY(-1px);
+}
+
+
+/* =========================================
+   ANKETOS INFORMACIJA
+   ========================================= */
+
+.anketos_anonmiskumas {
+    grid-column: 1 / -1;
+    grid-row: 4;
+
+    margin-top: 0;
+}
+
+.anketos_anonmiskumas p {
+    margin-bottom: 0;
+}
+
+.anketos_anonmiskumas {
+    margin-top: 25px;       /* Atskiria pastabą nuo išsaugojimo mygtuko */
+    font-size: 0.8rem;      /* Padaro raides pastebimai mažesnes */
+    color: rgba(255, 255, 255, 0.72);       /* Paverčia tekstą švelnesne pilka spalva */
+    font-style: italic;     /* Paverčia tekstą pasvirusiu (kursyvu) */
+    line-height: 2;       /* Sutvarko eilučių tarpus */
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    .psdf-survey-form,
+    .psdf-survey-layout {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .psdf-survey-intro {
+        margin-bottom: 20px;
+    }
+
+    .anketos_anonmiskumas p {
+        margin-top: 20px;
+    }
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+    .psdf-survey-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 480px) {
+
+    .psdf-survey-form {
+        height: 380px;
+    }
 }
 
 
@@ -988,7 +1016,7 @@
 @media (max-width: 1100px) {
 
     .psdf-charts-forms {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 
     .biudzeto-balanso-card {
