@@ -347,28 +347,6 @@
     /* overflow: hidden; */
 }
 
-
-/* subtilus violetinis dekoras */
-
-.psdf-chart-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    right: -80px;
-    top: -100px;
-
-    border-radius: 50%;
-
-    background: rgba(110, 66, 145, 0.07);
-
-    pointer-events: none;
-}
-
-
 /* =========================================
    HEADER
    ========================================= */
@@ -1035,6 +1013,68 @@
 
 
 
+
+.sestas_blokas > * {
+    margin-bottom: 10px;
+}
+
+.sestas_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+.penktas_blokas > * {
+    margin-bottom: 10px;
+}
+
+.penktas_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+.ketvirtas_blokas > * {
+    margin-bottom: 10px;
+}
+
+.ketvirtas_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+.pirmas_blokas > * {
+    margin-bottom: 10px;
+}
+
+.pirmas_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+.pirmas_blokas_a > * {
+    margin-bottom: 10px;
+}
+
+.pirmas_blokas_a > *:last-child {
+    margin-bottom: 0;
+}
+
+.antras_blokas > * {
+    margin-bottom: 10px;
+}
+
+.antras_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+.trecias_blokas > * {
+    margin-bottom: 10px;
+}
+
+.trecias_blokas > *:last-child {
+    margin-bottom: 0;
+}
 
 
 
