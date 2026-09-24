@@ -572,6 +572,17 @@
     .psdf-chart-header h4 {
         font-size: 19px;
     }
+
+    .pirmas_blokas {
+    font-size: 0.5em; /* Sumažina tekstą iki 85% nuo dabartinio dydžio */
+}
+
+
+
+
+
+
+
 }
 
 
