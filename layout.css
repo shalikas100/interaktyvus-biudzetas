@@ -333,26 +333,18 @@
 
 .psdf-chart-card {
     position: relative;
-
     min-width: 0;
-
     padding: 24px 28px 26px;
-
     border-radius: 22px;
-
     background:
         linear-gradient(
             145deg,
             #f8f4fb 0%,
             #f1eafa 100%
         );
-
     border: 1px solid rgba(73, 37, 102, 0.08);
-
-    box-shadow:
-        0 8px 30px rgba(47, 24, 68, 0.07);
-
-    overflow: hidden;
+    box-shadow:0 8px 30px rgba(47, 24, 68, 0.07);
+    /* overflow: hidden; */
 }
 
 
