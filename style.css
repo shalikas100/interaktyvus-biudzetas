@@ -40,7 +40,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    width: 500px;
+    width: 200px;
     padding: 15px;
     box-sizing: border-box;
 
@@ -70,29 +70,6 @@
     opacity: 1;
     visibility: visible;
     /* pointer-events: auto; */
-}
-
-/* Lentelė yra tooltip viduje */
-.info-tooltip table {
-    display: table;
-    width: 100%;
-    border-collapse: collapse;
-    margin: 10px 0;
-}
-
-.info-tooltip th,
-.info-tooltip td {
-    border: 1px solid #ccc;
-    padding: 6px 8px;
-}
-
-.info-tooltip th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-.info-tooltip p {
-    margin: 8px 0 0;
 }
 
 
