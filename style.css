@@ -1150,6 +1150,14 @@ html, body {
     /* pointer-events: auto; */
 }
 
+#legenda_islaidos {
+    overflow: visible !important;
+}
+
+#legenda_pajamos {
+    overflow: visible !important;
+}
+
 .handle{
     color: rgb(87, 10, 132);
 }

@@ -68,13 +68,24 @@ function pajamos(data) {
     const pajamos = data.tabs[0].items;
     const pajamosTotal = data.tabs[0].totals;
     // Legenda
+
+    const spanAsignavimai = `<span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    Pinigai, kuriuos valstybė skiria jos pavestiems darbams atlikti.
+                                </span>
+                            </span>`;
     let HTML = '';
 
     pajamos.forEach(item => {
+
+        let spanPajamos = '';
+        if(item.id === 'deleguotos-funkcijos-pajamos'){
+            spanPajamos = spanAsignavimai;
+        }
+
         HTML += `<p style="font-size: 10px;">
-            <span class="color" style="background:${item.color}"></span>
-            ${item.name}
-        </p>`;
+            <span class="color" style="background:${item.color}"></span>${item.name}${spanPajamos}</p>`;
     });
 
     document.getElementById('legenda_pajamos').innerHTML = HTML;
@@ -182,12 +193,33 @@ function islaidos(data) {
     const islaidos = data.tabs[1].items;
     const islaidosTotal = data.tabs[1].totals;
     // Legenda
+
+    const spanSveikata = `<span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    Valstybės finansuojamos priemonės, padedančios išvengti ligų, jas anksčiau nustatyti arba gydyti.
+                                </span>
+                            </span>`;
+    const spanValstDeleguotos = `<span class="info-icon">
+                            <i class="fa-solid fa-circle-info"></i>
+                                <span class="info-tooltip">
+                                    Paslaugos, vaistai, kurie apmokami valstybės tam skiriamais pinigais.
+                                </span>
+                            </span>`
+
     let HTML = '';
 
     islaidos.forEach(item => {
+        let spanIslaidos = '';
+        if(item.id === 'sveikatos-programos'){
+            spanIslaidos = spanSveikata;
+        }else if(item.id === 'deleguotos-funkcijos-islaidos'){
+            spanIslaidos = spanValstDeleguotos;
+        }
+
         HTML += `<p style="font-size: 10px;">
             <span class="color" style="background:${item.color}"></span>
-            ${item.name}
+            ${item.name}${spanIslaidos}
         </p>`;
     });
 
