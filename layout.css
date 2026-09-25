@@ -317,7 +317,7 @@
    ========================================= */
 
 .psdf-charts {
-    width:85%;
+    width:95%;
     /* max-width: 1550px; */
     margin: 0 auto;
 
@@ -867,7 +867,7 @@
 */
 
 .psdf-charts-forms {
-    width: 85%;
+    width: 95%;
     margin: 0 auto;
 
     display: grid;
