@@ -71,7 +71,7 @@
         {
           "id": "asmens-sveikatos-prieziura",
           "color":"#F09E38",
-          "name": "Asmens sveikatos priežiūros paslaugoms tenka",
+          "name": "Asmens sveikatos priežiūros paslaugoms",
           "plan2026": 3000,
           "forecast2027": 3509,
           "explanation": "Apmokama: <br>- šeimos gydytojų ir gydytojų specialistų konsultacijos, <br>- gydymas ligoninėse, <br>- skubioji pagalba gydymo įstaigose, <br>- slaugos paslaugos, <br>- medicininė reabilitacija, <br>- diagnostiniai tyrimai ir kt. <br>Didžiausia biudžeto dalis – visos pagrindinės gydymo paslaugos.",
@@ -83,7 +83,7 @@
         {
           "id": "vaistai-ir-priemones",
           "color":"#F4C242",
-          "name": "Vaistams ir medicinos pagalbos priemonėms tenka",
+          "name": "Vaistams ir medicinos pagalbos priemonėms",
           "plan2026": 837,
           "forecast2027": 972,
           "explanation": "Apmokama: <br>- vaistinėse išduoti kompensuojamieji vaistai, <br>- centralizuotai perkami brangūs vaistai, <br>- medicinos pagalbos priemonės, <br>- ortopedijos techninės priemonės, <br>- medicinos priemonių nuoma. <br>Sumažina gyventojų išlaidas vaistams ir priemonėms.",
@@ -95,7 +95,7 @@
         {
           "id": "sveikatos-programos",
           "color":"#F7DB78",
-          "name": "Sveikatos programoms tenka",
+          "name": "Sveikatos programoms",
           "plan2026": 236,
           "forecast2027": 304,
           "explanation": "Apmokama: <br>- prevencinių programų paslaugos, <br>- skiepai pagal valstybines programas, <br>- vaistai ir vakcinos užkrečiamųjų ligų kontrolei, <br>- dantų protezavimo, <br>- transplantacijos paslaugos, <br>- gyventojo patirtos gydymo išlaidos užsienyje ir kt. <br>Padeda išvengti ligų ar jas nustatyti anksčiau.",
@@ -107,7 +107,7 @@
         {
           "id": "deleguotos-funkcijos-islaidos",
           "color":"#FAE7A3",
-          "name": "Valstybės deleguotoms funkcijoms tenka",
+          "name": "Valstybės deleguotoms funkcijoms",
           "plan2026": 188,
           "forecast2027": 208,
           "explanation": "Apmokama: <br>- greitosios medicinos pagalbos paslaugos, <br>- nedraustų asmenų būtinoji sveikatos priežiūra, <br>- kraujo donorystės propagavimas, <br>- priemokos už vaistus bei medicinos pagalbos priemones. <br>Užtikrina būtinąsias išlaidas, kurias valstybė įsipareigoja finansuoti.",
@@ -119,7 +119,7 @@
         {
           "id": "kitos-islaidos",
           "color":"#FCF3D0",
-          "name": "Kitoms išlaidoms tenka",
+          "name": "Kitoms išlaidoms",
           "plan2026": 48,
           "forecast2027": 56,
           "explanation": "Apmokama: <br>- sveikatos sistemos administravimo kaštai, <br>- informacinių sistemų kūrimas ir priežiūra, <br>- kitos bendrosios sistemos išlaidos. <br>Be šių išlaidų sveikatos sistema negalėtų veikti sklandžiai.",
