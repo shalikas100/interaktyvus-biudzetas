@@ -1,3 +1,1087 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+.psdf-hero {
+    width: 100%;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 0%,
+            rgba(140, 82, 190, 0.32),
+            transparent 42%
+        ),
+        linear-gradient(
+            115deg,
+            #29123f 0%,
+            #3a1b5b 52%,
+            #4b2871 100%
+        );
+
+    color: #fff;
+}
+
+
+/* =========================================
+   PAGRINDINIS LAYOUT
+   ========================================= */
+
+.psdf-layout {
+    width: 82%;
+    max-width: 1550px;
+
+    min-height: 350px;
+
+    margin: 0 auto;
+    padding: 38px 0;
+
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+
+    align-items: center;
+
+    column-gap: 90px;
+}
+
+
+/* =========================================
+   KAIRĖ PUSĖ
+   ========================================= */
+
+.psdf-main {
+    min-width: 0;
+}
+
+.psdf-title {
+    max-width: 100%;
+
+    margin: 0 0 18px;
+
+    font-size: clamp(38px, 3.5vw, 56px);
+    line-height: 1.08;
+
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.psdf-title span {
+    color: #d5b9e8;
+}
+
+
+.psdf-description {
+    max-width: 900px;
+
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.45;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================
+   DEŠINĖ PUSĖ
+   ========================================= */
+
+.psdf-stats {
+    display: grid;
+
+    grid-template-columns: 1.35fr 0.8fr 0.8fr;
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* Visi blokeliai */
+
+.psdf-stat,
+.psdf-stat-small {
+    background: rgba(255, 255, 255, 0.09);
+
+    border: 1px solid rgba(255, 255, 255, 0.11);
+
+    border-radius: 18px;
+
+    min-height: 128px;
+
+    padding: 22px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.psdf-stat:hover,
+.psdf-stat-small:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.13);
+}
+
+
+/* Pagrindinis skaičius */
+
+.psdf-stat-number {
+    font-size: 30px;
+    line-height: 1;
+
+    font-weight: 700;
+    letter-spacing: -0.7px;
+
+    white-space: nowrap;
+}
+
+
+/* Pagrindinis 4,3 blokas */
+
+.psdf-stat-main .psdf-stat-number {
+    font-size: 34px;
+}
+
+
+/* Tekstas po skaičiumi */
+
+.psdf-stat-label {
+    margin-top: 9px;
+
+    font-size: 14px;
+    line-height: 1.3;
+
+    color: rgba(255, 255, 255, 0.62);
+}
+
+
+/* =========================================
+   DIDESNI EKRANAI
+   ========================================= */
+
+@media (min-width: 1600px) {
+
+    .psdf-layout {
+        width: 80%;
+        max-width: 1650px;
+
+        min-height: 340px;
+
+        column-gap: 110px;
+    }
+
+    .psdf-title {
+        font-size: 58px;
+    }
+
+    .psdf-description {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1200px) {
+
+    .psdf-layout {
+        width: 88%;
+
+        grid-template-columns: 1.2fr 1fr;
+
+        column-gap: 45px;
+    }
+
+    .psdf-title {
+        font-size: 43px;
+    }
+
+    .psdf-stats {
+        gap: 14px;
+    }
+
+    .psdf-stat,
+    .psdf-stat-small {
+        padding: 18px 15px;
+    }
+
+    .psdf-stat-main .psdf-stat-number {
+        font-size: 29px;
+    }
+
+    .psdf-stat-number {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================
+   MOBILE / MAŽAS TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .psdf-layout {
+        width: 90%;
+
+        min-height: auto;
+
+        padding: 35px 0;
+
+        grid-template-columns: 1fr;
+
+        row-gap: 30px;
+    }
+
+    .psdf-title {
+        font-size: 40px;
+    }
+
+    .psdf-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .psdf-layout {
+        width: 90%;
+
+        padding: 28px 0;
+
+        row-gap: 22px;
+    }
+
+    .psdf-title {
+        margin-bottom: 15px;
+
+        font-size: 32px;
+        line-height: 1.08;
+    }
+
+    .psdf-description {
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .psdf-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .psdf-stat,
+    .psdf-stat-small {
+        min-height: 85px;
+
+        padding: 17px 20px;
+
+        flex-direction: row;
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .psdf-stat-number,
+    .psdf-stat-main .psdf-stat-number {
+        min-width: 100px;
+
+        font-size: 25px;
+    }
+
+    .psdf-stat-label {
+        margin-top: 0;
+
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================
+   PSDF GRAFIKŲ SEKCIJA
+   ========================================= */
+
+.psdf-charts {
+    width:95%;
+    /* max-width: 1550px; */
+    margin: 0 auto;
+
+    display: grid;
+    /* Pirmos dvi kortelės gauna po 1 dalį, o trečioji – 1.2 dalies plotį */
+    grid-template-columns: 1fr 1fr 1.3fr;
+    gap: 28px;
+}
+
+/* =========================================
+   KORTELĖ
+   ========================================= */
+
+.psdf-chart-card {
+    position: relative;
+    min-width: 0;
+    padding: 24px 28px 26px;
+    border-radius: 22px;
+    background:
+        linear-gradient(
+            145deg,
+            #f8f4fb 0%,
+            #f1eafa 100%
+        );
+    border: 1px solid rgba(73, 37, 102, 0.08);
+    box-shadow:0 8px 30px rgba(47, 24, 68, 0.07);
+    /* overflow: hidden; */
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.psdf-chart-header {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 14px;
+}
+
+.psdf-chart-header h4 {
+    margin: 0;
+
+    color: #32174d;
+
+    font-size: 21px;
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+.psdf-chart-subtitle {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #8a7b96;
+
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+
+/* =========================================
+   GRAFIKO TURINYS
+   ========================================= */
+
+.psdf-chart-content {
+    position: relative;
+    z-index: 1;
+
+    min-height: 245px;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 190px;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.psdf-chart-stacked {
+    /* Pakeičiame stulpelius į vieną bendrą stulpelį, kad elementai kristų vienas po kito */
+    grid-template-columns: 1fr;
+}
+
+
+/* =========================================
+   LEGENDA
+   ========================================= */
+
+.psdf-chart-legend {
+    min-width: 0;
+
+    max-height: 215px;
+
+    overflow-y: auto;
+
+    padding-right: 8px;
+}
+
+
+/* tavo generuojami <p> */
+
+.psdf-chart-legend p {
+    display: flex;
+    align-items: center;
+
+    margin: 0 0 7px 0;
+
+    color: #4b3b57;
+
+    font-size: 14px !important;
+    line-height: 1.3;
+
+    text-align: left;
+}
+
+.psdf-chart-legend p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* spalvotas kvadratukas */
+
+.psdf-chart-legend .color {
+    width: 9px;
+    height: 9px;
+
+    margin-right: 7px;
+
+    border-radius: 2px;
+
+    flex: 0 0 9px;
+}
+
+
+/* =========================================
+   SCROLLBAR LEGENDAI
+   ========================================= */
+
+.psdf-chart-legend::-webkit-scrollbar {
+    width: 4px;
+}
+
+.psdf-chart-legend::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.psdf-chart-legend::-webkit-scrollbar-thumb {
+    background: rgba(73, 37, 102, 0.18);
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   CANVAS
+   ========================================= */
+
+.psdf-chart-canvas {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.psdf-chart-canvas canvas {
+    display: block;
+
+    width: 190px !important;
+    height: 190px !important;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+
+    .psdf-chart-stacked, .psdf-chart-wide{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #islaidos-2027, #pajamos-2027{
+        width: 100%;
+    }
+
+
+    .psdf-charts {
+        width: 88%;
+        grid-template-columns:  1fr;;
+        gap: 20px;
+    }
+
+    .psdf-chart-card {
+        padding: 22px;
+    }
+
+    .psdf-chart-content {
+        grid-template-columns: minmax(0, 1fr) 165px;
+
+        gap: 12px;
+    }
+
+    .psdf-chart-canvas {
+        width: 165px;
+        height: 165px;
+    }
+
+    .psdf-chart-canvas canvas {
+        width: 165px !important;
+        height: 165px !important;
+    }
+
+    .psdf-chart-header h4 {
+        font-size: 19px;
+    }
+
+    .islaidu_forma, .pajamu_forma {
+    font-size: 0.7em; /* Sumažina tekstą iki 85% nuo dabartinio dydžio */
+}
+
+
+
+
+
+
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .psdf-charts {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .psdf-chart-card {
+        padding: 20px;
+    }
+
+    .psdf-chart-content {
+        min-height: 210px;
+
+        grid-template-columns: minmax(0, 1fr) 155px;
+
+        gap: 12px;
+    }
+
+    .psdf-chart-canvas {
+        width: 155px;
+        height: 155px;
+    }
+
+    .psdf-chart-canvas canvas {
+        width: 155px !important;
+        height: 155px !important;
+    }
+}
+
+
+/* =========================================
+   LABAI MAŽAS MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .psdf-charts {
+        width: 92%;
+    }
+
+    .psdf-chart-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .psdf-chart-header {
+        margin-bottom: 10px;
+    }
+
+    .psdf-chart-header h4 {
+        font-size: 18px;
+    }
+
+    .psdf-chart-subtitle {
+        font-size: 11px;
+    }
+
+    .psdf-chart-content {
+        min-height: 175px;
+
+        grid-template-columns: minmax(0, 1fr) 125px;
+
+        gap: 8px;
+    }
+
+    .psdf-chart-canvas {
+        width: 125px;
+        height: 125px;
+    }
+
+    .psdf-chart-canvas canvas {
+        width: 125px !important;
+        height: 125px !important;
+    }
+
+    .psdf-chart-legend p {
+        font-size: 11px !important;
+        margin-bottom: 5px;
+    }
+
+    .psdf-chart-legend .color {
+        width: 8px;
+        height: 8px;
+        flex-basis: 8px;
+        margin-right: 6px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.psdf-survey {
+    width: 100%;
+    overflow: hidden;
+    background: #4b2871;
+    color: #fff;
+}
+
+.psdf-survey-layout {
+    width: 90%;
+    margin: 0 auto;
+    padding: 55px 0 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: 60px;
+}
+
+.psdf-survey-intro {
+    padding-top: 8px;
+}
+
+.psdf-survey-eyebrow {
+    margin-bottom: 12px;
+    color: #d5b9e8;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.psdf-survey-title {
+    margin: 0 0 20px;
+    font-size: clamp(32px, 3vw, 48px);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.psdf-survey-title span {
+    display: block;
+    color: #d5b9e8;
+}
+
+.psdf-survey-description {
+    max-width: 520px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.psdf-survey-form {
+    min-width: 0;
+    padding: 28px 32px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 45px;
+    align-items: start;
+}
+
+#surveyForm {
+    display: contents;
+}
+
+.question-title {
+    font-weight: 600;
+    margin-bottom: 14px;
+} 
+
+.psdf-survey-form .question {
+    padding: 0 0 22px;
+    margin: 0 0 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* 1 klausimas – kairė, viršus */
+.psdf-survey-form .question:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* 2 klausimas – dešinė, viršus */
+.psdf-survey-form .question:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* 3 klausimas – kairė, antra eilė */
+.psdf-survey-form .question:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* 4 klausimas – dešinė, antra eilė */
+.psdf-survey-form .question:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* =========================================
+   MYGTUKAS
+   ========================================= */
+
+.form-actions {
+    grid-column: 1;
+    grid-row: 3;
+    padding-top: 24px;
+}
+
+.psdf-survey-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 22px;
+    border: 0;
+    border-radius: 8px;
+    background: #d5b9e8;
+    color: #32174d;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.psdf-survey-button:hover {
+    background: #e1cdf0;
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   ANKETOS INFORMACIJA
+   ========================================= */
+.anketos_anonmiskumas {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin-top: 25px;       
+    font-size: 0.8rem;      
+    color: rgba(255, 255, 255, 0.72);      
+    font-style: italic;  
+    line-height: 1;       
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    .psdf-survey-form,
+    .psdf-survey-layout {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .psdf-survey-intro {
+        margin-bottom: 20px;
+    }
+
+    .anketos_anonmiskumas p {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .psdf-survey-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .psdf-survey-form {
+        height: 380px;
+    }
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* =========================================================
+   BIUDŽETO FORMŲ LAYOUT
+   ========================================================= */
+
+/*
+   Desktop:
+   - 3 kolonos
+   - pirmos dvi formos yra natūralaus turinio aukščio
+   - trečia kortelė išsitempia iki eilutės aukščio
+   - canvas pats NEFORMUOJA grid eilutės aukščio
+*/
+
+.psdf-charts-forms {
+    width: 95%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+
+    align-items: stretch;
+    min-width: 0;
+}
+
+.psdf-charts-forms > .psdf-chart-card {
+    min-width: 0;
+}
+
+.islaidu_forma,
+.pajamu_forma {
+    display: flex;
+    flex-direction: column;
+}
+
+.pajamu_forma #pajamos-2027_su_pasirinkimais {
+    margin-top: auto;
+}
+
+.islaidu_forma #islaidos-2027_su_pasirinkimais,
+.pajamu_forma #pajamos-2027_su_pasirinkimais {
+    box-sizing: border-box;
+}
+
+
+/* ===== BIUDŽETO BALANSO KORTELĖ ===== */
+
+.biudzeto-balanso-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 500px;
+    min-height: 0;
+}
+
+
+/* ===== CHART KONTEINERIS ===== */
+
+.biudzeto-balanso-chart {
+ 
+        display: flex;
+    flex-direction: column;
+
+}
+
+
+/* ===== CANVAS ===== */
+
+.biudzeto-balanso-chart canvas {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* ===== NOTE ===== */
+
+#note:empty {
+    display: none;
+}
+
+#note:not(:empty) {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 10px;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+/* ===== TABLET ===== */
+
+@media (max-width: 1200px) {
+
+    .psdf-charts-forms {
+        grid-template-columns: 1fr;
+    }
+
+    .biudzeto-balanso-card {
+        grid-column: 1 / -1;
+        height: 500px;
+    }
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+    .psdf-charts-forms {
+        grid-template-columns: 1fr;
+    }
+
+    .biudzeto-balanso-card {
+        grid-column: auto;
+        height: 450px;
+    }
+}
+
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 480px) {
+
+    .biudzeto-balanso-card {
+        height: 380px;
+    }
+}
+
+.lentele_islaidos-2027 td{
+    background-color: #f8f4fb !important;
+}
+
+.lentele_pajamos-2027 td{
+    background-color: #f8f4fb !important;
+}
+
+.lentele_pajamos-2027_su_pasirinkimais td{
+    background-color: #f1eafa !important;
+}
+
+.lentele_islaidos-2027_su_pasirinkimais td{
+    background-color: #f1eafa !important;
+}
+
+#islaidos-2027 table th,
+#islaidos-2027 table td,
+#pajamos-2027 table th,
+#pajamos-2027 table td,
+#islaidos-2027_su_pasirinkimais table th,
+#islaidos-2027_su_pasirinkimais table td,
+#pajamos-2027_su_pasirinkimais table th,
+#pajamos-2027_su_pasirinkimais table td{
+    padding: 1px 4px;
+    font-size: 12px;
+}
+
+
+
+.sestas_blokas > * {
+    margin-bottom: 10px;
+}
+
+.sestas_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+.penktas_blokas > * {
+    margin-bottom: 10px;
+}
+
+.penktas_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+.ketvirtas_blokas > * {
+    margin-bottom: 10px;
+}
+
+.ketvirtas_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.pirmas_blokas > * {
+    margin-bottom: 10px;
+}
+
+.pirmas_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+.pirmas_blokas_a > * {
+    margin-bottom: 10px;
+}
+
+.pirmas_blokas_a > *:last-child {
+    margin-bottom: 0;
+}
+
+.antras_blokas > * {
+    margin-bottom: 10px;
+}
+
+.antras_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
+.trecias_blokas > * {
+    margin-bottom: 10px;
+}
+
+.trecias_blokas > *:last-child {
+    margin-bottom: 0;
+}
+
 
 
 
@@ -71,6 +1155,129 @@
     visibility: visible;
     /* pointer-events: auto; */
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ///// MODALAI ////// */
+.modal-xxl {
+    max-width: 90%;
+}
+
+/* Ačiū modalas */
+.aciu-modal {
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    background: #f3f8f4;
+    padding: 40px 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Kryžiukas */
+.aciu-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+}
+
+/* Pagrindinė varnelė */
+.aciu-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #d8eddf;
+    color: #4f8060;
+
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* "Ačiū!" */
+.aciu-modal h2 {
+    margin-bottom: 12px;
+    color: #355c43;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Tekstas */
+.aciu-modal p {
+    margin: 0;
+    color: #52645a;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+
+
+/* Klaidos modalas */
+.klaidos-modal {
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    background: #fff5f3;
+    padding: 40px 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Kryžiukas */
+.klaidos-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+}
+
+/* Klaidos ikonėlė */
+.klaidos-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #f8dcd7;
+    color: #a65348;
+
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* Antraštė */
+.klaidos-modal h2 {
+    margin-bottom: 12px;
+    color: #7d4038;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+/* Tekstas */
+.klaidos-modal p {
+    margin: 0;
+    color: #6b5753;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
 
 
 
