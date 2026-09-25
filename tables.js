@@ -260,22 +260,22 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
     }
 
     let table = `
-        <table class="table table-sm table-hover table-bordered lentele_${container}">
+        <table class="table table-hover lentele_${container}">
             <thead>
                 <tr>
-                    <th style="background-color: ${dataTotal.color};" class="text-center align-middle small">
+                    <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
                         ${pavadinimas}
                     </th>
-                    <th style="background-color: ${dataTotal.color};" class="text-center align-middle small">
+                    <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
                         Bazinės ${pavadinimas.toLowerCase()} ${hoverBazines}
                     </th>
-                    <th style="background-color: ${dataTotal.color};" class="text-center align-middle small">
+                    <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
                         Struktūra, proc.
                     </th>
-                    <th style="background-color: ${dataTotal.color};" class="text-center align-middle small">
+                    <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
                         Jūsų biudžeto išlaidos  ${hoverVartotojo}
                     </th>
-                    <th style="background-color: ${dataTotal.color};" class="text-center align-middle small">
+                    <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
                         Struktūra
                     </th>
                 </tr>

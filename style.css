@@ -1150,12 +1150,9 @@ html, body {
     /* pointer-events: auto; */
 }
 
-
-
-
-
-
-
+.handle{
+    color: rgb(87, 10, 132);
+}
 
 
 
