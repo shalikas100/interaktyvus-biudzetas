@@ -70,7 +70,7 @@ function pajamos(data) {
     // Legenda
 
     const spanAsignavimai = `<span class="info-icon">
-                            <i class="fa-solid fa-circle-info"></i>
+                            <i class="fa-solid fa-circle-info ms-1"></i>
                                 <span class="info-tooltip">
                                     Pinigai, kuriuos valstybė skiria jos pavestiems darbams atlikti.
                                 </span>
@@ -195,13 +195,13 @@ function islaidos(data) {
     // Legenda
 
     const spanSveikata = `<span class="info-icon">
-                            <i class="fa-solid fa-circle-info"></i>
+                            <i class="fa-solid fa-circle-info ms-1"></i>
                                 <span class="info-tooltip">
                                     Valstybės finansuojamos priemonės, padedančios išvengti ligų, jas anksčiau nustatyti arba gydyti.
                                 </span>
                             </span>`;
     const spanValstDeleguotos = `<span class="info-icon">
-                            <i class="fa-solid fa-circle-info"></i>
+                            <i class="fa-solid fa-circle-info ms-1"></i>
                                 <span class="info-tooltip">
                                     Paslaugos, vaistai, kurie apmokami valstybės tam skiriamais pinigais.
                                 </span>
@@ -219,7 +219,7 @@ function islaidos(data) {
 
         HTML += `<p style="font-size: 10px;">
             <span class="color" style="background:${item.color}"></span>
-            ${item.name}${spanIslaidos}
+            ${item.name} ${spanIslaidos}
         </p>`;
     });
 

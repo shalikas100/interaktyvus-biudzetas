@@ -10,7 +10,6 @@ function lenteleAteitis(pavadinimas, data, dataTotal, container) {
         </span>`;
     }
 
-
     let table = `
         <table class ="table table-hover lentele_${container}">
             <thead>
@@ -98,7 +97,6 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             element,
             pinigai,
         });
-
     });
 
     const pasirinkimai = gautiFormosPasirinkimus();
@@ -182,11 +180,9 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
         let klausimoID = element.id;
 
         vartotojoPasirinktiDuomenys.push({
-
             klausimoID: klausimoID,
             vartotojoPinigai: vartotojoPinigai
         });
-
     });
 
     const pTotal = pradiniaiDuomenys.reduce(
@@ -246,7 +242,6 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
                             </span>
                         </span>
                         `;
-
         hoverVartotojo = `
                         <span class="info-icon">
                             <i class="fa-solid fa-circle-info"></i>
