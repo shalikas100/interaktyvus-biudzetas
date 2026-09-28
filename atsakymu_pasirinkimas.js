@@ -349,7 +349,7 @@ function atnaujintiBiudzetoBalansoCanva() {
             },
             plugins: {
                 legend: {
-                    display: true
+                    display: false
                 },
 
                 tooltip: {

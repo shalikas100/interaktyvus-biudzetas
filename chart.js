@@ -90,7 +90,7 @@ function pajamos(data) {
 
     document.getElementById('legenda_pajamos').innerHTML = HTML;
 
-    lenteleAteitis('Pajamos', pajamos, pajamosTotal, 'pajamos-2027');
+    // lenteleAteitis('Pajamos', pajamos, pajamosTotal, 'pajamos-2027');
     lenteleAteitisSuPasirinkimais('Pajamos', pajamos, pajamosTotal, 'pajamos-2027_su_pasirinkimais');
 
     // grafikas duomenys
@@ -225,7 +225,7 @@ function islaidos(data) {
 
     document.getElementById('legenda_islaidos').innerHTML = HTML;
 
-    lenteleAteitis('Išlaidos', islaidos, islaidosTotal, 'islaidos-2027');
+    // lenteleAteitis('Išlaidos', islaidos, islaidosTotal, 'islaidos-2027');
     lenteleAteitisSuPasirinkimais('Išlaidos', islaidos, islaidosTotal, 'islaidos-2027_su_pasirinkimais');
 
     // grafikas duomenys

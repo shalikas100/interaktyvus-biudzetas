@@ -14,17 +14,41 @@
 <body>
     <!-- //////////////// HEADER /////////////////////////////////////////// -->
     <section class="psdf-hero">
-        <div class="psdf-layout">
-            <!-- KAIRĖ -->
-            <div class="psdf-main">
-                <h1 class="psdf-title">
-                    Kviečiame priimti iššūkį ir sudėlioti<span>kitų metų PSDF biudžetą!</span>
-                </h1>
-                <p class="psdf-description">
-                    PSDF biudžetas – vienas svarbiausių lėšų šaltinių,
-                    iš kurio apmokama gyventojų sveikatos priežiūra Lietuvoje
-                    ir už jos ribų.
-                </p>
+        <div class="container-fluid">
+            <div class="psdf-layout">
+                <!-- KAIRĖ -->
+                <div class="psdf-main">
+                    <h1 class="psdf-title">
+                        Kviečiame priimti iššūkį ir sudėlioti
+                        <span>kitų metų PSDF biudžetą!</span>
+                    </h1>
+                    <p class="psdf-description">
+                        PSDF biudžetas – vienas svarbiausių lėšų šaltinių,
+                        iš kurio apmokama gyventojų sveikatos priežiūra Lietuvoje
+                        ir už jos ribų.
+                    </p>
+                </div>
+                <!-- DEŠINĖ -->
+                <div class="psdf-stats">
+                    <div class="psdf-stat psdf-stat-main">
+                        <div class="psdf-stat-number">4,3 mlrd. €</div>
+                        <div class="psdf-stat-label">
+                            PSDF biudžetas 2026 m.
+                        </div>
+                    </div>
+                    <div class="psdf-stat-small">
+                        <div class="psdf-stat-number">~5 %</div>
+                        <div class="psdf-stat-label">
+                            BVP dalis
+                        </div>
+                    </div>
+                    <div class="psdf-stat-small">
+                        <div class="psdf-stat-number">~90 %</div>
+                        <div class="psdf-stat-label">
+                            visuomeninių išlaidų sveikatai
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -78,24 +102,12 @@
             </div>
         </div>
         <!-- LENTELES -->
-        <div class="psdf-stats">
-            <!-- Pagrindinis blokas -->
-            <div class="psdf-stat">
-                <div class="psdf-stat-number">4,3 mlrd. €</div>
-                <div class="psdf-stat-label">Toks buvo PSDF biudžetas 2026 m.</div>
+        <div class="psdf-chart-card psdf-chart-wide">
+            <div class="psdf-chart-header">
+                <h4>2027 m. išlaidos ir pajamos (mln. Eur)</h4>
+                <span class="psdf-chart-subtitle">planas pagal galiojančius teisės aktus</span>
             </div>
-
-            <!-- Antras blokas -->
-            <div class="psdf-stat">
-                <div class="psdf-stat-number">~5 %</div>
-                <div class="psdf-stat-label">BVP dalis</div>
-            </div>
-
-            <!-- Trečias blokas -->
-            <div class="psdf-stat">
-                <div class="psdf-stat-number">~90 %</div>
-                <div class="psdf-stat-label">visuomeninių išlaidų sveikatai</div>
-            </div>
+            
         </div>
     </div>
 
@@ -105,7 +117,6 @@
                 patenkinti. Kokioms papildomoms išlaidoms ar pajamoms pritartumėte Jūs:</h4>
         </div>
     </div>
-
     <!-- //////////////// FORMOS VARTOTOJUI /////////////////////////////////////////// -->
     <div class="psdf-charts-forms">
         <div class="psdf-chart-card islaidu_forma">
@@ -318,7 +329,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div id="islaidos-2027_su_pasirinkimais"></div> -->
+            <div id="islaidos-2027_su_pasirinkimais"></div>
         </div>
         <div class="psdf-chart-card pajamu_forma">
             <div class="row ketvirtas_blokas mb-4">
@@ -548,46 +559,10 @@
                     </div>
                 </div>
             </div>
-            <!-- <div id="pajamos-2027_su_pasirinkimais"></div> -->
+            <div id="pajamos-2027_su_pasirinkimais"></div>
         </div>
         <div class="psdf-chart-card">
-            <div id="islaidos-2027_su_pasirinkimais"></div>
-            <div id="pajamos-2027_su_pasirinkimais"></div>
             <div id="note"></div>
-            <div class="biudzeto-balansas-legend">
-    <div class="legend-group">
-        <div class="legend-title">Išlaidos</div>
-
-        <div class="legend-item">
-            <span class="legend-color" style="background:#FFD966;"></span>
-            <span>Išlaidos (baziniai poreikiai)</span>
-        </div>
-
-        <div class="legend-item">
-            <span class="legend-color" style="background:#E6B800;"></span>
-            <span>Papildomos išlaidos</span>
-        </div>
-
-        <div class="legend-item">
-            <span class="legend-color" style="background:#C00000;"></span>
-            <span>Išlaidų perviršis</span>
-        </div>
-    </div>
-
-    <div class="legend-group">
-        <div class="legend-title">Pajamos</div>
-
-        <div class="legend-item">
-            <span class="legend-color" style="background:#70AD47;"></span>
-            <span>Prognozuojamos pajamos</span>
-        </div>
-
-        <div class="legend-item">
-            <span class="legend-color" style="background:#548235;"></span>
-            <span>Papildomos pajamos</span>
-        </div>
-    </div>
-</div>
             <div class="biudzeto-balanso-chart">
                 <canvas id="biudzeto_balansas_canva"></canvas>
             </div>

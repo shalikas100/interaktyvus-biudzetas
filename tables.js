@@ -266,6 +266,9 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
                         Struktūra, proc.
                     </th>
                     <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
+                        Jūsų pasirinkimas
+                    </th>
+                    <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
                         Jūsų biudžeto išlaidos  ${hoverVartotojo}
                     </th>
                     <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
@@ -301,6 +304,9 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             <td class="text-center align-middle small">
                 ${item.pradinisProcentas}
             </td>
+            <td class="text-center align-middle small">
+                ${formatuotiSkaiciu(item.vartotojoSuma - item.pradineSuma)}
+            </td>
             <td ${cellBackground} class="text-center align-middle small">
                 ${formatuotiSkaiciu(item.vartotojoSuma)}
             </td>
@@ -321,6 +327,9 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             </td>
             <td class="text-center align-middle small">
                 100
+            </td>
+            <td class="text-center align-middle small">
+                
             </td>
             <td class="text-center align-middle small">
                 ${formatuotiSkaiciu(vTotal)}
