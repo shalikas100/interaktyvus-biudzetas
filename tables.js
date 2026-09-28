@@ -10,6 +10,7 @@ function lenteleAteitis(pavadinimas, data, dataTotal, container) {
         </span>`;
     }
 
+
     let table = `
         <table class ="table table-hover lentele_${container}">
             <thead>
@@ -97,6 +98,7 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             element,
             pinigai,
         });
+
     });
 
     const pasirinkimai = gautiFormosPasirinkimus();
@@ -184,6 +186,7 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             klausimoID: klausimoID,
             vartotojoPinigai: vartotojoPinigai
         });
+
     });
 
     const pTotal = pradiniaiDuomenys.reduce(
@@ -255,7 +258,7 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
     }
 
     let table = `
-        <table class="table table-hover lentele_${container}">
+        <table class="table table-bordered table-hover lentele_${container}">
             <thead>
                 <tr>
                     <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
@@ -271,7 +274,7 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
                         Jūsų biudžeto išlaidos  ${hoverVartotojo}
                     </th>
                     <th scope="col" style="background-color: ${dataTotal.color};" class="text-center align-middle small">
-                        Struktūra
+                        Struktūra, proc.
                     </th>
                 </tr>
             </thead>
