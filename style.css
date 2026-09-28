@@ -1,30 +1,24 @@
-html, body {
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
 }
-
-
 
 .psdf-hero {
     width: 100%;
     overflow: hidden;
 
     background:
-        radial-gradient(
-            circle at 85% 0%,
+        radial-gradient(circle at 85% 0%,
             rgba(140, 82, 190, 0.32),
-            transparent 42%
-        ),
-        linear-gradient(
-            115deg,
+            transparent 42%),
+        linear-gradient(115deg,
             #29123f 0%,
             #3a1b5b 52%,
-            #4b2871 100%
-        );
+            #4b2871 100%);
 
     color: #fff;
 }
-
 
 /* =========================================
    PAGRINDINIS LAYOUT
@@ -46,7 +40,6 @@ html, body {
 
     column-gap: 90px;
 }
-
 
 /* =========================================
    KAIRĖ PUSĖ
@@ -72,7 +65,6 @@ html, body {
     color: #d5b9e8;
 }
 
-
 .psdf-description {
     max-width: 900px;
 
@@ -83,7 +75,6 @@ html, body {
 
     color: rgba(255, 255, 255, 0.78);
 }
-
 
 /* =========================================
    DEŠINĖ PUSĖ
@@ -98,7 +89,6 @@ html, body {
 
     align-items: stretch;
 }
-
 
 /* Visi blokeliai */
 
@@ -129,7 +119,6 @@ html, body {
     background: rgba(255, 255, 255, 0.13);
 }
 
-
 /* Pagrindinis skaičius */
 
 .psdf-stat-number {
@@ -142,13 +131,11 @@ html, body {
     white-space: nowrap;
 }
 
-
 /* Pagrindinis 4,3 blokas */
 
 .psdf-stat-main .psdf-stat-number {
     font-size: 34px;
 }
-
 
 /* Tekstas po skaičiumi */
 
@@ -160,7 +147,6 @@ html, body {
 
     color: rgba(255, 255, 255, 0.62);
 }
-
 
 /* =========================================
    DIDESNI EKRANAI
@@ -185,7 +171,6 @@ html, body {
         font-size: 18px;
     }
 }
-
 
 /* =========================================
    TABLET
@@ -223,7 +208,6 @@ html, body {
     }
 }
 
-
 /* =========================================
    MOBILE / MAŽAS TABLET
    ========================================= */
@@ -250,7 +234,6 @@ html, body {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 
 /* =========================================
    MOBILE
@@ -309,20 +292,12 @@ html, body {
     }
 }
 
-
-
-
-
-
-
-
-
 /* =========================================
    PSDF GRAFIKŲ SEKCIJA
    ========================================= */
 
 .psdf-charts {
-    width:95%;
+    width: 95%;
     /* max-width: 1550px; */
     margin: 0 auto;
 
@@ -342,13 +317,11 @@ html, body {
     padding: 24px 28px 26px;
     border-radius: 22px;
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #f8f4fb 0%,
-            #f1eafa 100%
-        );
+            #f1eafa 100%);
     border: 1px solid rgba(73, 37, 102, 0.08);
-    box-shadow:0 8px 30px rgba(47, 24, 68, 0.07);
+    box-shadow: 0 8px 30px rgba(47, 24, 68, 0.07);
     /* overflow: hidden; */
 }
 
@@ -385,7 +358,6 @@ html, body {
     line-height: 1.3;
 }
 
-
 /* =========================================
    GRAFIKO TURINYS
    ========================================= */
@@ -410,7 +382,6 @@ html, body {
     grid-template-columns: 1fr;
 }
 
-
 /* =========================================
    LEGENDA
    ========================================= */
@@ -424,7 +395,6 @@ html, body {
 
     padding-right: 8px;
 }
-
 
 /* tavo generuojami <p> */
 
@@ -446,7 +416,6 @@ html, body {
     margin-bottom: 0;
 }
 
-
 /* spalvotas kvadratukas */
 
 .psdf-chart-legend .color {
@@ -459,7 +428,6 @@ html, body {
 
     flex: 0 0 9px;
 }
-
 
 /* =========================================
    SCROLLBAR LEGENDAI
@@ -477,7 +445,6 @@ html, body {
     background: rgba(73, 37, 102, 0.18);
     border-radius: 10px;
 }
-
 
 /* =========================================
    CANVAS
@@ -503,32 +470,26 @@ html, body {
     cursor: pointer;
 }
 
-
 /* =========================================
    TABLET
    ========================================= */
-
-
-
-
-
-
-
 @media (max-width: 1200px) {
 
-    .psdf-chart-stacked, .psdf-chart-wide{
+    .psdf-chart-stacked,
+    .psdf-chart-wide {
         display: flex;
         flex-direction: column;
     }
 
-    #islaidos-2027, #pajamos-2027{
+    #islaidos-2027,
+    #pajamos-2027 {
         width: 100%;
     }
 
-
     .psdf-charts {
         width: 88%;
-        grid-template-columns:  1fr;;
+        grid-template-columns: 1fr;
+        ;
         gap: 20px;
     }
 
@@ -556,18 +517,12 @@ html, body {
         font-size: 19px;
     }
 
-    .islaidu_forma, .pajamu_forma {
-    font-size: 0.7em; /* Sumažina tekstą iki 85% nuo dabartinio dydžio */
+    .islaidu_forma,
+    .pajamu_forma {
+        font-size: 0.7em;
+        /* Sumažina tekstą iki 85% nuo dabartinio dydžio */
+    }
 }
-
-
-
-
-
-
-
-}
-
 
 /* =========================================
    MOBILE
@@ -605,7 +560,6 @@ html, body {
         height: 155px !important;
     }
 }
-
 
 /* =========================================
    LABAI MAŽAS MOBILE
@@ -665,17 +619,7 @@ html, body {
     }
 }
 
-
-
-
-
-
-
-
-
-
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
 .psdf-survey {
     width: 100%;
     overflow: hidden;
@@ -747,7 +691,7 @@ html, body {
 .question-title {
     font-weight: 600;
     margin-bottom: 14px;
-} 
+}
 
 .psdf-survey-form .question {
     padding: 0 0 22px;
@@ -819,11 +763,11 @@ html, body {
 .anketos_anonmiskumas {
     grid-column: 1 / -1;
     grid-row: 4;
-    margin-top: 25px;       
-    font-size: 0.8rem;      
-    color: rgba(255, 255, 255, 0.72);      
-    font-style: italic;  
-    line-height: 1;       
+    margin-top: 25px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-style: italic;
+    line-height: 1;
 }
 
 /* =========================================
@@ -856,20 +800,9 @@ html, body {
 }
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-
 /* =========================================================
    BIUDŽETO FORMŲ LAYOUT
    ========================================================= */
-
-/*
-   Desktop:
-   - 3 kolonos
-   - pirmos dvi formos yra natūralaus turinio aukščio
-   - trečia kortelė išsitempia iki eilutės aukščio
-   - canvas pats NEFORMUOJA grid eilutės aukščio
-*/
-
 .psdf-charts-forms {
     width: 95%;
     margin: 0 auto;
@@ -882,7 +815,7 @@ html, body {
     min-width: 0;
 }
 
-.psdf-charts-forms > .psdf-chart-card {
+.psdf-charts-forms>.psdf-chart-card {
     min-width: 0;
 }
 
@@ -901,7 +834,6 @@ html, body {
     box-sizing: border-box;
 }
 
-
 /* ===== BIUDŽETO BALANSO KORTELĖ ===== */
 
 .biudzeto-balanso-card {
@@ -912,16 +844,12 @@ html, body {
     min-height: 0;
 }
 
-
 /* ===== CHART KONTEINERIS ===== */
-
 .biudzeto-balanso-chart {
- 
-        display: flex;
+
+    display: flex;
     flex-direction: column;
-
 }
-
 
 /* ===== CANVAS ===== */
 
@@ -931,7 +859,6 @@ html, body {
     width: 100% !important;
     height: 100% !important;
 }
-
 
 /* ===== NOTE ===== */
 
@@ -948,7 +875,6 @@ html, body {
     line-height: 1.4;
 }
 
-
 /* ===== TABLET ===== */
 
 @media (max-width: 1200px) {
@@ -962,7 +888,6 @@ html, body {
         height: 500px;
     }
 }
-
 
 /* ===== MOBILE ===== */
 
@@ -978,7 +903,6 @@ html, body {
     }
 }
 
-
 /* ===== SMALL MOBILE ===== */
 
 @media (max-width: 480px) {
@@ -988,19 +912,19 @@ html, body {
     }
 }
 
-.lentele_islaidos-2027 td{
+.lentele_islaidos-2027 td {
     background-color: #f8f4fb !important;
 }
 
-.lentele_pajamos-2027 td{
+.lentele_pajamos-2027 td {
     background-color: #f8f4fb !important;
 }
 
-.lentele_pajamos-2027_su_pasirinkimais td{
+.lentele_pajamos-2027_su_pasirinkimais td {
     background-color: #f1eafa !important;
 }
 
-.lentele_islaidos-2027_su_pasirinkimais td{
+.lentele_islaidos-2027_su_pasirinkimais td {
     background-color: #f1eafa !important;
 }
 
@@ -1011,76 +935,68 @@ html, body {
 #islaidos-2027_su_pasirinkimais table th,
 #islaidos-2027_su_pasirinkimais table td,
 #pajamos-2027_su_pasirinkimais table th,
-#pajamos-2027_su_pasirinkimais table td{
+#pajamos-2027_su_pasirinkimais table td {
     padding: 1px 4px;
     font-size: 12px;
 }
 
-
-
-.sestas_blokas > * {
+.sestas_blokas>* {
     margin-bottom: 10px;
 }
 
-.sestas_blokas > *:last-child {
+.sestas_blokas>*:last-child {
     margin-bottom: 0;
 }
 
-.penktas_blokas > * {
+.penktas_blokas>* {
     margin-bottom: 10px;
 }
 
-.penktas_blokas > *:last-child {
+.penktas_blokas>*:last-child {
     margin-bottom: 0;
 }
 
-.ketvirtas_blokas > * {
+.ketvirtas_blokas>* {
     margin-bottom: 10px;
 }
 
-.ketvirtas_blokas > *:last-child {
+.ketvirtas_blokas>*:last-child {
     margin-bottom: 0;
 }
 
-
-
-.pirmas_blokas > * {
+.pirmas_blokas>* {
     margin-bottom: 10px;
 }
 
-.pirmas_blokas > *:last-child {
+.pirmas_blokas>*:last-child {
     margin-bottom: 0;
 }
 
-.pirmas_blokas_a > * {
+.pirmas_blokas_a>* {
     margin-bottom: 10px;
 }
 
-.pirmas_blokas_a > *:last-child {
+.pirmas_blokas_a>*:last-child {
     margin-bottom: 0;
 }
 
-.antras_blokas > * {
+.antras_blokas>* {
     margin-bottom: 10px;
 }
 
-.antras_blokas > *:last-child {
+.antras_blokas>*:last-child {
     margin-bottom: 0;
 }
 
-.trecias_blokas > * {
+.trecias_blokas>* {
     margin-bottom: 10px;
 }
 
-.trecias_blokas > *:last-child {
+.trecias_blokas>*:last-child {
     margin-bottom: 0;
 }
 
-
-
-
-
-.fa-solid{
+.fa-solid {
     color: rgb(87, 10, 132);
     opacity: 0.8;
     animation: pulsavimas 1.5s infinite ease-in-out;
@@ -1091,12 +1007,14 @@ html, body {
         transform: scale(1);
         opacity: 0.8;
     }
+
     50% {
-        transform: scale(1.15); 
-        opacity: 1;          
+        transform: scale(1.15);
+        opacity: 1;
     }
+
     100% {
-        transform: scale(1);    
+        transform: scale(1);
         opacity: 0.8;
     }
 }
@@ -1107,7 +1025,7 @@ html, body {
     cursor: help;
 }
 
-.info-icon > i {
+.info-icon>i {
     font-size: 12px;
 }
 
@@ -1144,7 +1062,7 @@ html, body {
 }
 
 /* Užvedus ant IKONĖLĖS – parodomas visas tooltip */
-.info-icon:hover > .info-tooltip {
+.info-icon:hover>.info-tooltip {
     opacity: 1;
     visibility: visible;
     /* pointer-events: auto; */
@@ -1158,12 +1076,9 @@ html, body {
     overflow: visible !important;
 }
 
-.handle{
+.handle {
     color: rgb(87, 10, 132);
 }
-
-
-
 
 /* ///// MODALAI ////// */
 .modal-xxl {
@@ -1222,9 +1137,6 @@ html, body {
     line-height: 1.6;
 }
 
-
-
-
 /* Klaidos modalas */
 .klaidos-modal {
     position: relative;
@@ -1276,10 +1188,3 @@ html, body {
     font-size: 17px;
     line-height: 1.6;
 }
-
-
-
-
-
-
-

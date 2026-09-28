@@ -1,7 +1,7 @@
 function lenteleAteitis(pavadinimas, data, dataTotal, container) {
 
     let hover = '';
-    if(pavadinimas == 'Išlaidos'){
+    if (pavadinimas == 'Išlaidos') {
         hover = `<span class="info-icon">
             <i class="fa-solid fa-circle-info"></i>
             <span class="info-tooltip">
@@ -10,7 +10,6 @@ function lenteleAteitis(pavadinimas, data, dataTotal, container) {
         </span>`;
     }
 
- 
     let table = `
         <table class ="table table-hover lentele_${container}">
             <thead>
@@ -98,7 +97,6 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             element,
             pinigai,
         });
-
     });
 
     const pasirinkimai = gautiFormosPasirinkimus();
@@ -186,8 +184,6 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             klausimoID: klausimoID,
             vartotojoPinigai: vartotojoPinigai
         });
-
-
     });
 
     const pTotal = pradiniaiDuomenys.reduce(
@@ -199,7 +195,6 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
         (sum, item) => sum + Number(item.vartotojoPinigai || 0),
         0
     );
-
 
     const galutiniaiDuomenys = pradiniaiDuomenys.map(item => {
 
@@ -238,7 +233,7 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
     let hoverBazines = '';
     let hoverVartotojo = '';
 
-    if(pavadinimas == 'Išlaidos'){
+    if (pavadinimas == 'Išlaidos') {
 
         hoverBazines = `
                         <span class="info-icon">
@@ -282,24 +277,22 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             </thead>
             <tbody>
     `;
-
     galutiniaiDuomenys.forEach(item => {
 
         let color = '';
 
-        if(pavadinimas == 'Išlaidos'){
+        if (pavadinimas == 'Išlaidos') {
             color = '#FFF2CC';
-        }else if(pavadinimas == 'Pajamos'){
+        } else if (pavadinimas == 'Pajamos') {
             color = '#E2EFDA';
-        }else{
+        } else {
             color = 'white';
         }
 
         let cellBackground = ` style="background-color: ${color};" `;
-        if(item.pradineSuma == item.vartotojoSuma){
+        if (item.pradineSuma == item.vartotojoSuma) {
             cellBackground = '';
         }
-
 
         table += `
                 <tr>

@@ -1,6 +1,4 @@
-
 // Islaidu blokas, zymimi pasirinkimai ////////////////////////////////////////////////////////////
-
 // 1 klausimas
 const checkboxesVDU = document.querySelectorAll('input[name="vdu"]');
 checkboxesVDU.forEach(checkboxVDU => {
@@ -78,9 +76,7 @@ checkboxVaistai.forEach(checkboxVaistai => {
     });
 });
 
-
 // Pajamu blokas, zymimi pasirinkimai ////////////////////////////////////////////////////////////
-
 // 4 klausimas
 const checkboxesPSDpadidinimas = document.querySelectorAll('input[name="psd_imokos_padidinimas"]');
 checkboxesPSDpadidinimas.forEach(checkboxPSD_padidinimas => {
@@ -130,8 +126,6 @@ checkboxPSD_lengvatos_naikinimas.forEach(checkbox => {
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 document.querySelectorAll(
     'input[name="vdu"], ' +
     'input[name="asp-paslaugos"], ' +
@@ -148,7 +142,6 @@ document.querySelectorAll(
     });
 
 });
-
 
 function gautiPasirinkimus(name) {
 
@@ -230,15 +223,6 @@ function gautiFormosPasirinkimus() {
     };
 }
 
-
-
-
-
-
-
-
-
-
 let biudzetoRezultataiCanva = {
     islaidos: null,
     pajamos: null
@@ -299,8 +283,7 @@ function atnaujintiBiudzetoBalansoCanva() {
         islaiduPrieaugis - islaiduPervirsis
     );
 
-
-     const islaiduPervirsisAtvaizdavimui = islaiduVartotojoTotal - pajamuVartotojoTotal;
+    const islaiduPervirsisAtvaizdavimui = islaiduVartotojoTotal - pajamuVartotojoTotal;
 
     const canvas = document.getElementById('biudzeto_balansas_canva');
 
@@ -316,45 +299,45 @@ function atnaujintiBiudzetoBalansoCanva() {
         data: {
             labels: ['Išlaidos', 'Pajamos'],
 
-datasets: [
-    {
-        label: 'Išlaidos (baziniai poreikiai)',
-        data: [islaiduPradineTotal, 0],
-        backgroundColor: '#FFD966',
-        borderWidth: 0
-    },
-    {
-        label: 'Papildomos išlaidos',
-        data: [papildomosIslaidosBePervirsio, 0],
-        backgroundColor: '#E6B800',
-        borderWidth: 0
-    },
-    {
-        label: 'Išlaidų perviršis',
-        data: [islaiduPervirsis, 0],
-        backgroundColor: '#C00000',
-        borderWidth: 0
-    },
-    {
-        label: 'Prognozuojamos pajamos',
-        data: [0, pajamuPradineTotal],
-        backgroundColor: '#70AD47',
-        borderWidth: 0
-    },
-    {
-        label: 'Papildomos pajamos',
-        data: [0, pajamuPrieaugis],
-        backgroundColor: '#548235',
-        borderWidth: 0
-    }
-]
+            datasets: [
+                {
+                    label: 'Išlaidos (baziniai poreikiai)',
+                    data: [islaiduPradineTotal, 0],
+                    backgroundColor: '#FFD966',
+                    borderWidth: 0
+                },
+                {
+                    label: 'Papildomos išlaidos',
+                    data: [papildomosIslaidosBePervirsio, 0],
+                    backgroundColor: '#E6B800',
+                    borderWidth: 0
+                },
+                {
+                    label: 'Išlaidų perviršis',
+                    data: [islaiduPervirsis, 0],
+                    backgroundColor: '#C00000',
+                    borderWidth: 0
+                },
+                {
+                    label: 'Prognozuojamos pajamos',
+                    data: [0, pajamuPradineTotal],
+                    backgroundColor: '#70AD47',
+                    borderWidth: 0
+                },
+                {
+                    label: 'Papildomos pajamos',
+                    data: [0, pajamuPrieaugis],
+                    backgroundColor: '#548235',
+                    borderWidth: 0
+                }
+            ]
         },
 
         options: {
             responsive: true,
             maintainAspectRatio: false,
 
-                     scales: {
+            scales: {
                 x: {
                     stacked: true
                 },
@@ -377,14 +360,12 @@ datasets: [
                     }
                 }
             }
-
-   
         }
     });
 
     let note = '';
 
-    if(islaiduPervirsisAtvaizdavimui > 0){
+    if (islaiduPervirsisAtvaizdavimui > 0) {
         note = `
                 <div class="alert alert-danger">
                 Jūsų išlaidos viršija numatomas pajamas <strong>${islaiduPervirsisAtvaizdavimui} mln. Eur</strong>, o biudžetas negali būti deficitinis. Tad turite pasirinkti, ką darysite toliau:
@@ -406,10 +387,9 @@ datasets: [
             tdIslaidos.style.backgroundColor = 'red';
             tdIslaidos.style.color = 'white';
         }
-    }else{
+    } else {
         note = '';
     }
-
 
     document.getElementById('note').innerHTML = note;
 }

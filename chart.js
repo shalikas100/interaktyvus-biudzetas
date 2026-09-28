@@ -44,7 +44,7 @@ function atidarytiModal(pavadinimas, items, itemsTotal) {
                 <td class="text-center align-middle small">${formatuotiProcentus(itemsTotal.changePercent)}</td>
             </tr>`;
 
-    HTML +=`</tbody></table>`;
+    HTML += `</tbody></table>`;
     document.getElementById('biudzetasModalBody').innerHTML = HTML;
 
     const modal = new bootstrap.Modal(
@@ -80,7 +80,7 @@ function pajamos(data) {
     pajamos.forEach(item => {
 
         let spanPajamos = '';
-        if(item.id === 'deleguotos-funkcijos-pajamos'){
+        if (item.id === 'deleguotos-funkcijos-pajamos') {
             spanPajamos = spanAsignavimai;
         }
 
@@ -90,8 +90,8 @@ function pajamos(data) {
 
     document.getElementById('legenda_pajamos').innerHTML = HTML;
 
-    lenteleAteitis('Pajamos', pajamos, pajamosTotal, 'pajamos-2027'); 
-    lenteleAteitisSuPasirinkimais('Pajamos', pajamos, pajamosTotal, 'pajamos-2027_su_pasirinkimais');  
+    lenteleAteitis('Pajamos', pajamos, pajamosTotal, 'pajamos-2027');
+    lenteleAteitisSuPasirinkimais('Pajamos', pajamos, pajamosTotal, 'pajamos-2027_su_pasirinkimais');
 
     // grafikas duomenys
     const labels = pajamos.map(item => item.name);
@@ -137,7 +137,7 @@ function pajamos(data) {
 
             responsive: true,
             maintainAspectRatio: false,
-            
+
             plugins: {
                 legend: {
                     display: false
@@ -211,9 +211,9 @@ function islaidos(data) {
 
     islaidos.forEach(item => {
         let spanIslaidos = '';
-        if(item.id === 'sveikatos-programos'){
+        if (item.id === 'sveikatos-programos') {
             spanIslaidos = spanSveikata;
-        }else if(item.id === 'deleguotos-funkcijos-islaidos'){
+        } else if (item.id === 'deleguotos-funkcijos-islaidos') {
             spanIslaidos = spanValstDeleguotos;
         }
 
