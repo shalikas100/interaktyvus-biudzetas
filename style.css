@@ -903,18 +903,8 @@ body {
     min-width: 0;
 }
 
-.islaidu_forma,
-.pajamu_forma {
-    display: flex;
-    flex-direction: column;
-}
-
-.pajamu_forma #pajamos-2027_su_pasirinkimais {
-    margin-top: auto;
-}
-
-.islaidu_forma #islaidos-2027_su_pasirinkimais,
-.pajamu_forma #pajamos-2027_su_pasirinkimais {
+#islaidos-2027_su_pasirinkimais,
+#pajamos-2027_su_pasirinkimais {
     box-sizing: border-box;
 }
 
@@ -996,14 +986,6 @@ body {
     }
 }
 
-.lentele_islaidos-2027 td {
-    background-color: #f8f4fb !important;
-}
-
-.lentele_pajamos-2027 td {
-    background-color: #f8f4fb !important;
-}
-
 .lentele_pajamos-2027_su_pasirinkimais td {
     background-color: #f1eafa !important;
 }
@@ -1011,6 +993,8 @@ body {
 .lentele_islaidos-2027_su_pasirinkimais td {
     background-color: #f1eafa !important;
 }
+
+
 
 #islaidos-2027 table th,
 #islaidos-2027 table td,
@@ -1022,6 +1006,27 @@ body {
 #pajamos-2027_su_pasirinkimais table td {
     padding: 1px 4px;
     font-size: 12px;
+}
+
+@media (max-width: 1400px){
+
+    #islaidos-2027_su_pasirinkimais table th,
+    #islaidos-2027_su_pasirinkimais table td,
+    #pajamos-2027_su_pasirinkimais table th,
+    #pajamos-2027_su_pasirinkimais table td {
+        padding: 1px 2px;
+        font-size: 10px;
+    }
+}
+@media (max-width: 768px){
+
+    #islaidos-2027_su_pasirinkimais table th,
+    #islaidos-2027_su_pasirinkimais table td,
+    #pajamos-2027_su_pasirinkimais table th,
+    #pajamos-2027_su_pasirinkimais table td {
+        padding: 1px 1px;
+        font-size: 8px;
+    }
 }
 
 .sestas_blokas>* {
