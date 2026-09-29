@@ -27,14 +27,14 @@ function atnaujintiPrioritetus() {
     const answers = [
         ...answersContainer.querySelectorAll('.answer_1_a')
     ];
-    const raides = ['a', 'b', 'c', 'd'];
+    const raides = ['I', 'II', 'III', 'IV'];
     answers.forEach((answer, index) => {
         // Atnaujiname prioritetą
         answer.querySelector('.priority').textContent = index + 1;
 
         // Atnaujiname raidę pagal dabartinę poziciją
         answer.querySelector('.atsakymo-raide').textContent =
-            raides[index] + ')';
+            raides[index] + '.';
     });
     // Originalių atsakymų ID eilė
     const order = answers.map(answer => Number(answer.dataset.value));
