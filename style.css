@@ -679,11 +679,6 @@ body {
         gap: 8px;
     }
 
-    .psdf-chart-canvas {
-        width: 125px;
-        height: 125px;
-    }
-
     .psdf-chart-canvas canvas {
         width: 125px !important;
         height: 125px !important;
@@ -889,6 +884,11 @@ body {
 .psdf-charts-forms {
     width: 95%;
     margin: 0 auto;
+
+
+    display: grid;
+    
+
 
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
