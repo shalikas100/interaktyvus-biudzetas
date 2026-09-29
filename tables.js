@@ -304,7 +304,7 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             <td class="text-center align-middle small">
                 ${item.pradinisProcentas}
             </td>
-            <td class="text-center align-middle small">
+            <td class="text-center align-middle small" style="background-color: ${dataTotal.color} !important">
                 ${formatuotiSkaiciu(item.vartotojoSuma - item.pradineSuma)}
             </td>
             <td ${cellBackground} class="text-center align-middle small">
@@ -328,7 +328,7 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
             <td class="text-center align-middle small">
                 100
             </td>
-            <td class="text-center align-middle small">
+            <td class="text-center align-middle small" style="background-color: ${dataTotal.color} !important">
                 ${formatuotiSkaiciu(galutiniaiDuomenys.reduce(
                     (sum, item) =>
                         sum + (item.vartotojoSuma - item.pradineSuma),

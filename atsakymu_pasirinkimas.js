@@ -375,24 +375,24 @@ function atnaujintiBiudzetoBalansoCanva() {
         note = `
                 <div class="alert alert-danger">
                 Jūsų išlaidos viršija numatomas pajamas <strong>${islaiduPervirsisAtvaizdavimui} mln. eurų</strong>, o biudžetas negali būti deficitinis. 
-                Tad turite pasirinkti, ką darysite toliau: * koreguosite išlaidas (grįžti į dalį Numatomos papildomos išlaidos); *didinsite pajamas 
-                (grįžti į dalį Numatomos papildomos pajamos).
+                Tad turite pasirinkti, ką darysite toliau:<br>*koreguosite išlaidas (grįžti į dalį Pasirinkite papildomas išlaidas); <br>*didinsite pajamas 
+                (grįžti į dalį Pasirinkite papildomas pajamas).
                 </div>
                 `;
 
-        let elementasPajamos = document.getElementById('pajamos-2027_su_pasirinkimais');
-        let tdPajamos = elementasPajamos.querySelector('tbody tr:last-child td:nth-child(4)');
-        if (tdPajamos) {
-            tdPajamos.style.backgroundColor = 'red';
-            tdPajamos.style.color = 'white';
-        }
+        // let elementasPajamos = document.getElementById('pajamos-2027_su_pasirinkimais');
+        // let tdPajamos = elementasPajamos.querySelector('tbody tr:last-child td:nth-child(4)');
+        // if (tdPajamos) {
+        //     tdPajamos.style.backgroundColor = 'red';
+        //     tdPajamos.style.color = 'white';
+        // }
 
-        let elementasIslaidos = document.getElementById('islaidos-2027_su_pasirinkimais');
-        let tdIslaidos = elementasIslaidos.querySelector('tbody tr:last-child td:nth-child(4)');
-        if (tdIslaidos) {
-            tdIslaidos.style.backgroundColor = 'red';
-            tdIslaidos.style.color = 'white';
-        }
+        // let elementasIslaidos = document.getElementById('islaidos-2027_su_pasirinkimais');
+        // let tdIslaidos = elementasIslaidos.querySelector('tbody tr:last-child td:nth-child(4)');
+        // if (tdIslaidos) {
+        //     tdIslaidos.style.backgroundColor = 'red';
+        //     tdIslaidos.style.color = 'white';
+        // }
     } else if (islaiduPervirsisAtvaizdavimui < 0) {
 
         let beMinus = Math.abs(islaiduPervirsisAtvaizdavimui);
