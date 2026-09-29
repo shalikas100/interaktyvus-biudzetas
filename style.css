@@ -3,16 +3,11 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
-
+/* // HEADER  */
 .psdf-hero {
     width: 100%;
-    /* Naudojame min-height vietoje fiksuoto aukščio, kad prisitaikytų prie turinio */
     min-height: auto; 
-    
-    /* Pridedame vidines paraštes (padding) viršuje/apačioje ir šonuose */
-    /* padding: 60px 24px;  */
     box-sizing: border-box;
-
     background:
         radial-gradient(circle at 85% 0%,
             rgba(140, 82, 190, 0.32),
@@ -21,76 +16,42 @@ body {
             #29123f 0%,
             #3a1b5b 52%,
             #4b2871 100%);
-
     color: #fff;
-    
-    /* Centruojame vidinį layout bloką */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
 }
 
-/* =========================================
-   PAGRINDINIS LAYOUT
-   ========================================= */
-
 .psdf-layout {
-    /* Ribojame maksimalų plotį iki 1200px, kad dideliuose ekranuose neišsitemptų per daug */
     width: 100%;
     max-width: 1200px; 
-    
     display: flex;
     flex-direction: column;
-    /* Lygiuojame turinį į kairę pusę – tai suteikia modernumo, kai tekstas wrapinasi */
     justify-content: center;
     align-items: flex-start; 
 }
 
-/* =========================================
-   KAIRĖ PUSĖ (TURINYS)
-   ========================================= */
-
-.psdf-main {
-    min-width: 0;
-    width: 100%;
-}
-
 .psdf-title {
-    /* Ribojame plotį, kad ilgas tekstas priverstinai keltųsi į kitą eilutę (wrap) */
     max-width: 1000px;
-
     margin: 0 0 16px;
-
-    /* Modernus, dinamiškas šrifto dydis */
     font-size: clamp(32px, 4vw, 48px);
     line-height: 1.15;
-
     font-weight: 800; /* Ryškesnis, modernesnis storis */
     letter-spacing: -1px;
 }
 
 .psdf-title span {
     color: #d5b9e8;
-    /* Leidžiame šiai daliai natūraliai nusikelti žemyn, jei netelpa */
     display: inline-block; 
 }
 
 .psdf-description {
-    /* Mažesnis plotis už pavadinimą sukuria vizualinę hierarchiją (didysis viršuje, mažasis apačioje) */
     max-width: 600px;
-
     margin: 0;
-
     font-size: 16px;
     line-height: 1.5;
-
     color: rgba(255, 255, 255, 0.85); /* Šiek tiek ryškesnis tekstas geresniam skaitomumui */
 }
 
-
-/* =========================================
-   DEŠINĖ PUSĖ
-   ========================================= */
 
 /* Pagrindinis 3 blokų konteineris */
 .psdf-stats { 
@@ -99,7 +60,6 @@ body {
   gap: 10px; 
   width: 100%;
 } 
-
 /* Visi 3 blokeliai (kortelės) */
 .psdf-stat {
     min-width: 0;
@@ -121,7 +81,6 @@ body {
         background .2s ease,
         border-color .2s ease;
 }
-
 /* Skaičių stilius */
 .psdf-stat-number {
     flex: 0 0 auto;
@@ -133,12 +92,10 @@ body {
 
     white-space: nowrap;
 } 
-
 /* Išskirtas pirmojo (pagrindinio) bloko skaičiaus dydis */
 .psdf-stat-main .psdf-stat-number { 
   font-size: 34px; 
 } 
-
 /* Tekstas po skaičiumi */
 .psdf-stat-label {
     flex: 1 1 auto;
@@ -154,7 +111,6 @@ body {
 
     overflow-wrap: break-word;
 }
-
 /* Prisitaikymas mobiliesiems ekranams */
 @media (max-width: 768px) {
   .psdf-stats {
@@ -162,7 +118,6 @@ body {
     gap: 16px;
   }
 }
-
 /* =========================================
    DIDESNI EKRANAI
    ========================================= */
@@ -172,54 +127,25 @@ body {
     .psdf-layout {
         width: 80%;
         max-width: 1650px;
-
         min-height: 340px;
-
         column-gap: 110px;
     }
-
     .psdf-title {
         font-size: 58px;
     }
-
     .psdf-description {
         font-size: 18px;
     }
 }
-
-/* =========================================
-   TABLET
-   ========================================= */
-
 @media (max-width: 1200px) {
 
     .psdf-layout {
         width: 88%;
-
         grid-template-columns: 1.2fr 1fr;
-
         column-gap: 45px;
     }
-
     .psdf-title {
         font-size: 43px;
-    }
-
-    .psdf-stats {
-        gap: 14px;
-    }
-
-    .psdf-stat,
-    .psdf-stat-small {
-        padding: 18px 15px;
-    }
-
-    .psdf-stat-main .psdf-stat-number {
-        font-size: 29px;
-    }
-
-    .psdf-stat-number {
-        font-size: 25px;
     }
 }
 
@@ -231,22 +157,13 @@ body {
 
     .psdf-layout {
         width: 90%;
-
         min-height: auto;
-
         padding: 35px 0;
-
         grid-template-columns: 1fr;
-
         row-gap: 30px;
     }
-
     .psdf-title {
         font-size: 40px;
-    }
-
-    .psdf-stats {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -258,9 +175,7 @@ body {
 
     .psdf-layout {
         width: 90%;
-
         padding: 28px 0;
-
         row-gap: 22px;
     }
 
@@ -276,55 +191,39 @@ body {
         line-height: 1.45;
     }
 
-    .psdf-stats {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .psdf-stat,
-    .psdf-stat-small {
-        min-height: 85px;
-
-        padding: 17px 20px;
-
+     .psdf-stat {
+        min-height: 8px;
+        padding: 10px 10px;
         flex-direction: row;
         align-items: center;
-
-        gap: 20px;
-    }
+        gap: 10px;
+    } 
 
     .psdf-stat-number,
     .psdf-stat-main .psdf-stat-number {
         min-width: 100px;
-
         font-size: 25px;
     }
 
     .psdf-stat-label {
         margin-top: 0;
-
         font-size: 13px;
     }
 }
 
-/* =========================================
-   PSDF GRAFIKŲ SEKCIJA
-   ========================================= */
-
-/* =========================================
-   PAGRINDINIS BLOKAS
-   ========================================= */
 
 .psdf-charts {
     width: 65%;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: 1.2fr 1.2fr 0.8fr;
     gap: 22px;
-
-    /* SVARBU – kortelės nebesitempia pagal aukščiausią */
     align-items: stretch;
+}
+@media (max-width: 1500px) {
+    .psdf-charts {
+        width: 95%;
+    }
 }
 
 
@@ -509,17 +408,13 @@ body {
 
 .psdf-stats {
     height: 100%;
-
     display: grid;
     grid-template-rows: repeat(3, minmax(min-content, 1fr));
-
     gap: 10px;
 }
 /* PAGRINDINIS */
-
 .psdf-stat-main {
     padding: 20px 19px;
-
     background:
         linear-gradient(
             145deg,
@@ -553,6 +448,7 @@ body {
 
 
 
+
 /* =========================================
    TABLET
    ========================================= */
@@ -570,9 +466,8 @@ body {
     }
 
     .psdf-charts {
-        width: 88%;
-        grid-template-columns: 1fr;
-        ;
+        width: 95%;
+        grid-template-columns: 1.2fr 1.2fr 0.8fr;
         gap: 20px;
     }
 
@@ -582,7 +477,6 @@ body {
 
     .psdf-chart-content {
         grid-template-columns: minmax(0, 1fr) 165px;
-
         gap: 12px;
     }
 
