@@ -101,9 +101,7 @@ document.getElementById('saveButton').addEventListener('click', function () {
     // 4. BIUDŽETAS NEGALI BŪTI DEFICITINIS
     // ==========================================
 
-    if (
-        document.getElementById('note').innerHTML.trim() !== ''
-    ) {
+    if (biudzetasDeficitinis) {
 
         const deficitinisModal = new bootstrap.Modal(
             document.getElementById('deficitinis')

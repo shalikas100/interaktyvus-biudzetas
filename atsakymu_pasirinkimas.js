@@ -137,6 +137,8 @@ document.querySelectorAll(
 
     input.addEventListener('change', function () {
 
+        rodytiBiudzetoNote = true;
+
         perskaiciuotiLentele();
 
     });
@@ -228,6 +230,8 @@ let biudzetoRezultataiCanva = {
     pajamos: null
 };
 
+let rodytiBiudzetoNote = false;
+
 function perskaiciuotiLentele() {
 
     const islaidos = biudzetasData.tabs[1].items;
@@ -243,6 +247,7 @@ function perskaiciuotiLentele() {
 }
 
 let biudzetoBalansoChart = null;
+let biudzetasDeficitinis = false;
 
 function atnaujintiBiudzetoBalansoCanva() {
 
@@ -284,6 +289,7 @@ function atnaujintiBiudzetoBalansoCanva() {
     );
 
     const islaiduPervirsisAtvaizdavimui = islaiduVartotojoTotal - pajamuVartotojoTotal;
+    biudzetasDeficitinis = islaiduPervirsisAtvaizdavimui > 0;
 
     const canvas = document.getElementById('biudzeto_balansas_canva');
 
@@ -368,9 +374,9 @@ function atnaujintiBiudzetoBalansoCanva() {
     if (islaiduPervirsisAtvaizdavimui > 0) {
         note = `
                 <div class="alert alert-danger">
-                Jūsų išlaidos viršija numatomas pajamas <strong>${islaiduPervirsisAtvaizdavimui} mln. Eur</strong>, o biudžetas negali būti deficitinis. Tad turite pasirinkti, ką darysite toliau:
-                * koreguosite išlaidas (grįžti į 1 klausimą);
-                *didinsite pajamas (grįžti į 4 klausimą)“.
+                Jūsų išlaidos viršija numatomas pajamas <strong>${islaiduPervirsisAtvaizdavimui} mln. eurų</strong>, o biudžetas negali būti deficitinis. 
+                Tad turite pasirinkti, ką darysite toliau: * koreguosite išlaidas (grįžti į dalį Numatomos papildomos išlaidos); *didinsite pajamas 
+                (grįžti į dalį Numatomos papildomos pajamos).
                 </div>
                 `;
 
@@ -387,10 +393,29 @@ function atnaujintiBiudzetoBalansoCanva() {
             tdIslaidos.style.backgroundColor = 'red';
             tdIslaidos.style.color = 'white';
         }
-    } else {
+    } else if (islaiduPervirsisAtvaizdavimui < 0) {
+
+        let beMinus = Math.abs(islaiduPervirsisAtvaizdavimui);
+
+        note = `
+            <div class="alert alert-success">
+                Sveikiname! Jūsų biudžeto pajamos viršija išlaidas <strong>${beMinus} mln. eurų.</strong>
+                </div>
+            `;
+    } else if (islaiduPervirsisAtvaizdavimui == 0) {
+        note = `
+            <div class="alert alert-success">
+                Sveikiname! Jums pavyko subalansuoti biudžetą.
+                </div>
+            `;
+    }
+    else {
         note = '';
     }
+    const noteElement = document.getElementById('note');
 
-    document.getElementById('note').innerHTML = note;
+if (noteElement) {
+    noteElement.innerHTML = rodytiBiudzetoNote ? note : '';
+}
 }
 

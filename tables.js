@@ -329,7 +329,11 @@ function lenteleAteitisSuPasirinkimais(pavadinimas, data, dataTotal, container) 
                 100
             </td>
             <td class="text-center align-middle small">
-                
+                ${formatuotiSkaiciu(galutiniaiDuomenys.reduce(
+                    (sum, item) =>
+                        sum + (item.vartotojoSuma - item.pradineSuma),
+                    0
+                ))}
             </td>
             <td class="text-center align-middle small">
                 ${formatuotiSkaiciu(vTotal)}
