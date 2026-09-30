@@ -252,7 +252,7 @@ body {
     position: relative;
     min-width: 0;
 
-    padding: 18px 20px 20px;
+    padding: 18px 15px 15px;
 
     border-radius: 18px;
 
@@ -483,11 +483,6 @@ body {
         font-size: 19px;
     }
 
-    .islaidu_forma,
-    .pajamu_forma {
-        font-size: 0.7em;
-        /* Sumažina tekstą iki 85% nuo dabartinio dydžio */
-    }
 }
 
 /* =========================================
@@ -773,7 +768,6 @@ body {
 .psdf-charts-forms {
     width: 95%;
     margin: 0 auto;
-    display: grid;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
@@ -1223,12 +1217,51 @@ body {
     user-select: none;
 }
 
+
+
+
+.atsakymo-pinigai {
+    white-space: nowrap;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+}
+
+.atsakymo-pasirinkimas {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0;
+}
+@media (max-width: 1300px) {
+
+    .atsakymo-raide,
+    .atsakymo-aprasymas,
+    .atsakymo-pinigai {
+        font-size: 12px;
+        padding: 0px 10px;
+    }
+}
+
 @media (max-width: 768px) {
 
-    .atsakymo-raide, 
-    .atsakymo-aprasymas, 
+    .atsakymo-raide,
+    .atsakymo-aprasymas,
     .atsakymo-pinigai {
         font-size: 10px;
         padding: 0;
+    }
 }
+
+/* .islaidu_forma .row[id^="klausimas-"] p {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #333;
 }
+
+.atsakymo-raide,
+    .atsakymo-aprasymas,
+    .atsakymo-pinigai {
+        font-size: 12px;
+    } */
