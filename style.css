@@ -1192,6 +1192,58 @@ body {
 }
 
 
+@media (max-width: 600px) {
+    .biudzeto-balansas-legend {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .legend-title {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .legend-item {
+        font-size: 10px;
+        gap: 5px;
+        overflow-wrap: anywhere;
+    }
+
+    .legend-color {
+        width: 9px;
+        height: 9px;
+        flex-basis: 9px;
+    }
+}
+
+/* Labai maži ekranai */
+@media (max-width: 360px) {
+    .biudzeto-balansas-legend {
+        gap: 8px;
+        padding: 0 6px;
+    }
+
+    .legend-item {
+        font-size: 9px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .drag-list .answer_1_a {
     cursor: grab;
     padding: 10px 0;
