@@ -1,6 +1,6 @@
 
 
-let duomenys = `
+let duomenys = 
 {
 "amzius":"nenoriu_nurodyti",
 "issilavinimas":"nenoriu_nurodyti",
@@ -13,17 +13,13 @@ let duomenys = `
 "psd_padidinimas_tarifas":["d"],
 "psd_lengvatos_naikinimas":["d"],
 "prioritetas_vdu":["visiems darbuotojams","gydytojams","slaugytojams","kitam personalui"]
-}`;
-
-
-
+};
 
 async function saveJson(data) {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbx4Kf_rEAmUESyI7BcZwWVKLWGvbR0s6AIMHyv2lTGcDKrv0A6jejmhhEI7hUXe1kcMPg/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbytuBT54Uxxw2m8dqMGtO9ixWSQ-2h8cp-NTl4WQ1thv5CBXixqjIVsz-JxKgBT5bFm/exec', {
     method: 'POST',
     mode: 'cors', // Užtikriname, kad naršyklė žinotų apie CORS
     headers: {
-        // Pakeičiame tipą į tekstą, kad išvengtume Preflight (OPTIONS) užklausos
         'Content-Type': 'text/plain;charset=utf-8' 
     },
     body: JSON.stringify(data)
