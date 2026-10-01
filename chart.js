@@ -84,13 +84,19 @@ function pajamos(data) {
             spanPajamos = spanAsignavimai;
         }
 
-        HTML += `<p style="font-size: 10px;">
-            <span class="color" style="background:${item.color}"></span>${item.name}${spanPajamos}</p>`;
+        HTML += `
+                <p class="legend-item" style="font-size: 10px;">
+                    <span class="color" style="background:${item.color}"></span>
+                    <span class="legend-item-text">
+                        ${item.name},
+                        <strong>${item.plan2026.toLocaleString('lt-LT')} mln. Eur; ${Math.round(item.share2026*100)}%</strong>
+                        ${spanPajamos}
+                    </span>
+                </p>`;
     });
 
     document.getElementById('legenda_pajamos').innerHTML = HTML;
 
-    // lenteleAteitis('Pajamos', pajamos, pajamosTotal, 'pajamos-2027');
     lenteleAteitisSuPasirinkimais('Pajamos', pajamos, pajamosTotal, 'pajamos-2027_su_pasirinkimais');
 
     // grafikas duomenys
@@ -217,10 +223,15 @@ function islaidos(data) {
             spanIslaidos = spanValstDeleguotos;
         }
 
-        HTML += `<p style="font-size: 10px;">
-            <span class="color" style="background:${item.color}"></span>
-            ${item.name} ${spanIslaidos}
-        </p>`;
+        HTML += `
+                <p class="legend-item" style="font-size: 10px;">
+                    <span class="color" style="background:${item.color}"></span>
+                    <span class="legend-item-text">
+                        ${item.name},
+                        <strong>${item.plan2026.toLocaleString('lt-LT')} mln. Eur; ${Math.round(item.share2026*100)}%</strong>
+                        ${spanIslaidos}
+                    </span>
+                </p>`;
     });
 
     document.getElementById('legenda_islaidos').innerHTML = HTML;

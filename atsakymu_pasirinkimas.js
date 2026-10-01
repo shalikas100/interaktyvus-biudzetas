@@ -380,32 +380,19 @@ function atnaujintiBiudzetoBalansoCanva() {
                 </div>
                 `;
 
-        // let elementasPajamos = document.getElementById('pajamos-2027_su_pasirinkimais');
-        // let tdPajamos = elementasPajamos.querySelector('tbody tr:last-child td:nth-child(4)');
-        // if (tdPajamos) {
-        //     tdPajamos.style.backgroundColor = 'red';
-        //     tdPajamos.style.color = 'white';
-        // }
-
-        // let elementasIslaidos = document.getElementById('islaidos-2027_su_pasirinkimais');
-        // let tdIslaidos = elementasIslaidos.querySelector('tbody tr:last-child td:nth-child(4)');
-        // if (tdIslaidos) {
-        //     tdIslaidos.style.backgroundColor = 'red';
-        //     tdIslaidos.style.color = 'white';
-        // }
     } else if (islaiduPervirsisAtvaizdavimui < 0) {
 
         let beMinus = Math.abs(islaiduPervirsisAtvaizdavimui);
 
         note = `
             <div class="alert alert-success">
-                Sveikiname! Jūsų biudžeto pajamos viršija išlaidas <strong>${beMinus} mln. eurų.</strong>
+                Jūsų biudžeto pajamos viršija išlaidas <strong>${beMinus} mln. eurų.</strong>
                 </div>
             `;
     } else if (islaiduPervirsisAtvaizdavimui == 0) {
         note = `
             <div class="alert alert-success">
-                Sveikiname! Jums pavyko subalansuoti biudžetą.
+                Jums pavyko subalansuoti biudžetą.
                 </div>
             `;
     }
