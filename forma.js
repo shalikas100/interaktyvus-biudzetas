@@ -201,6 +201,8 @@ document.querySelectorAll(
 
 duomenys.prioritetas_vdu = prioritetai;
 
+console.log(JSON.stringify(duomenys));
+
     fetch(
     'http://localhost/phpProjektai/interaktyvus_biudzetas/api/save_survey.php',
     {
