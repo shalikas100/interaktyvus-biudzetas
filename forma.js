@@ -189,90 +189,89 @@ document.getElementById('saveButton').addEventListener('click', function () {
     // 8. 1A KLAUSIMO PRIORITETAI
     // ==========================================
 
-const prioritetai = [];
+    const prioritetai = [];
 
-document.querySelectorAll(
-    '#answers_1_a .answer_1_a'
-).forEach(element => {
+    document.querySelectorAll(
+        '#answers_1_a .answer_1_a'
+    ).forEach(element => {
 
-    prioritetai.push(element.dataset.value);
+        prioritetai.push(element.dataset.value);
 
-});
+    });
 
-duomenys.prioritetas_vdu = prioritetai;
+    duomenys.prioritetas_vdu = prioritetai;
 
-console.log(JSON.stringify(duomenys));
+    console.log(JSON.stringify(duomenys));
 
-    fetch(
-    'http://localhost/phpProjektai/interaktyvus_biudzetas/api/save_survey.php',
-    {
+    fetch('https://script.google.com/macros/s/AKfycbytuBT54Uxxw2m8dqMGtO9ixWSQ-2h8cp-NTl4WQ1thv5CBXixqjIVsz-JxKgBT5bFm/exec', {
         method: 'POST',
+        mode: 'cors', // Užtikriname, kad naršyklė žinotų apie CORS
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'text/plain;charset=utf-8'
         },
         body: JSON.stringify(duomenys)
     }
-)
-.then(async response => {
+    )
+        .then(async response => {
 
-    const data = await response.json();
+            const data = await response.json();
 
-    if (!response.ok) {
-        throw new Error(data.message || 'Serverio klaida: ' + response.status);
-    }
+            if (!response.ok) {
+                throw new Error(data.message || 'Serverio klaida: ' + response.status);
+            }
 
-    return data;
-})
-.then(data => {
+            return data;
+        })
+        .then(data => {
 
-    if (data.status === 'success') {
+            console.log(data);
+            if (data.status === 'success') {
 
-        // Išvalome visą formą
-        document.getElementById('surveyForm').reset();
+                // Išvalome visą formą
+                document.getElementById('surveyForm').reset();
 
 
-        // Papildomai išvalome checkbox'us
-        document.querySelectorAll(
-            'input[type="checkbox"]'
-        ).forEach(input => {
+                // Papildomai išvalome checkbox'us
+                document.querySelectorAll(
+                    'input[type="checkbox"]'
+                ).forEach(input => {
 
-            input.checked = false;
+                    input.checked = false;
+
+                });
+
+
+                // Vėl paslepiame 4 klausimą
+                question4.style.display = 'none';
+
+
+                // Perskaičiuojame lentelę
+                perskaiciuotiLentele();
+
+
+                // Parodome sėkmės modalą
+                const aciuModal = new bootstrap.Modal(
+                    document.getElementById('aciuModal')
+                );
+
+                aciuModal.show();
+
+            } else {
+
+                console.error(
+                    'Serveris atmetė duomenis:',
+                    data.message
+                );
+
+            }
+
+        })
+        .catch(error => {
+
+            console.error(
+                'Klaida siunčiant duomenis:',
+                error
+            );
 
         });
-
-
-        // Vėl paslepiame 4 klausimą
-        question4.style.display = 'none';
-
-
-        // Perskaičiuojame lentelę
-        perskaiciuotiLentele();
-
-
-        // Parodome sėkmės modalą
-        const aciuModal = new bootstrap.Modal(
-            document.getElementById('aciuModal')
-        );
-
-        aciuModal.show();
-
-    } else {
-
-        console.error(
-            'Serveris atmetė duomenis:',
-            data.message
-        );
-
-    }
-
-})
-.catch(error => {
-
-    console.error(
-        'Klaida siunčiant duomenis:',
-        error
-    );
-
-});
-
 });
