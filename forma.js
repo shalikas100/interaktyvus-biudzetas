@@ -201,7 +201,10 @@ document.getElementById('saveButton').addEventListener('click', function () {
 
     duomenys.prioritetas_vdu = prioritetai;
 
-    console.log(JSON.stringify(duomenys));
+     const siunciamaModal = new bootstrap.Modal(
+                    document.getElementById('siunciamaModal')
+                );
+                siunciamaModal.show();
 
     fetch('https://script.google.com/macros/s/AKfycbytuBT54Uxxw2m8dqMGtO9ixWSQ-2h8cp-NTl4WQ1thv5CBXixqjIVsz-JxKgBT5bFm/exec', {
         method: 'POST',
@@ -219,59 +222,45 @@ document.getElementById('saveButton').addEventListener('click', function () {
             if (!response.ok) {
                 throw new Error(data.message || 'Serverio klaida: ' + response.status);
             }
-
             return data;
         })
         .then(data => {
-
-            console.log(data);
             if (data.status === 'success') {
 
+                siunciamaModal.hide();
                 // Išvalome visą formą
                 document.getElementById('surveyForm').reset();
-
-
                 // Papildomai išvalome checkbox'us
                 document.querySelectorAll(
                     'input[type="checkbox"]'
                 ).forEach(input => {
-
                     input.checked = false;
-
                 });
-
-
                 // Vėl paslepiame 4 klausimą
                 question4.style.display = 'none';
 
-
                 // Perskaičiuojame lentelę
                 perskaiciuotiLentele();
-
-
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
                 // Parodome sėkmės modalą
                 const aciuModal = new bootstrap.Modal(
                     document.getElementById('aciuModal')
                 );
-
                 aciuModal.show();
-
             } else {
-
                 console.error(
                     'Serveris atmetė duomenis:',
                     data.message
                 );
-
             }
-
         })
         .catch(error => {
-
             console.error(
                 'Klaida siunčiant duomenis:',
                 error
             );
-
         });
 });
